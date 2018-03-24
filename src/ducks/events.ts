@@ -36,7 +36,7 @@ export const eventsReducer = (state = [], action: any) => {
  */
 function* fetchEventsSaga() {
   try {
-    const resp = yield call(axios.get, 'http://localhost:3001/events');
+    const resp = yield call(axios.get, 'http://localhost:3011/events');
 
     yield put({
       type: FETCH_EVENTS_SUCCESS,
@@ -45,7 +45,7 @@ function* fetchEventsSaga() {
   } catch (error) {
     yield put({
       type: FETCH_EVENTS_FAIL,
-      payload: error,
+      payload: [],
     });
   }
 }
