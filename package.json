@@ -25,7 +25,7 @@
     "redux-saga": "^0.16.0"
   },
   "scripts": {
-    "start": "react-scripts-ts start && yarn watch-css",
+    "start": "concurrently --kill-others \"yarn react-scripts-ts start\" \"yarn watch-css\" \"yarn start-server\"",
     "start-server": "cd mock-server && json-server --watch generate.js",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
@@ -38,6 +38,7 @@
     "@types/node": "^9.6.0",
     "@types/react": "^16.0.40",
     "@types/react-dom": "^16.0.4",
+    "concurrently": "^3.5.1",
     "typescript": "^2.7.2"
   }
 }

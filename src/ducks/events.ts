@@ -17,13 +17,52 @@ export const fetchEvents = () => {
   };
 };
 
+export interface Event {
+  name: string;
+  image: string;
+  description: string;
+  going?: number;
+  likes?: number;
+  interested?: number;
+  category: string;
+  county: string;
+  startDate: string;
+  endDate: string;
+  createdAt: string;
+  updatedAt?: string;
+  deletedAt?: string;
+}
+
+export interface Filters {
+  category: string | null;
+  date: string | null;
+  county: string | null;
+}
+
+export interface EventReducerModel {
+  filters: Filters;
+  events: Event[];
+}
+
 /**
  * Reducer
  */
-export const eventsReducer = (state = [], action: any) => {
+const defaultState = {
+  events: [],
+  filters: {
+    category: null,
+    date: null,
+    county: null
+  }
+};
+
+export const eventsReducer = (state: EventReducerModel = defaultState, action: any) => {
   switch (action.type) {
     case FETCH_EVENTS_SUCCESS:
-      return [...action.payload];
+      return {
+        ...state,
+        events: [...action.payload]
+      };
     case FETCH_EVENTS_FAIL:
       return action.payload.data;
     default:

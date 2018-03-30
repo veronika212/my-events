@@ -8,6 +8,9 @@ import { eventsReducer } from '../ducks/events';
 
 const rootReducer = combineReducers({
   events: eventsReducer,
+  // eventDetail: eventDetailReducer,
+  // users: usersReducer,
+  // userDetail: userDetailReducer,
   form: formReducer,
 });
 
