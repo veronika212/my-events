@@ -1,35 +1,55 @@
-const format = require('date-fns/format')
+const format = require('date-fns/format');
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-};
+}
 
 function getRandomIntegersArray(arrayLength, max) {
-  const randomArray = Array.apply(null, Array(arrayLength)).map(function (item, index) {
+  const randomArray = Array.apply(null, Array(arrayLength)).map(function(item, index) {
     return Math.floor(Math.random() * max);
   });
 
   // Filter values to be unique
   return randomArray.filter((v, i, a) => a.indexOf(v) === i);
-};
+}
 
 function createDate(addDays) {
   const today = new Date();
   const nextDate = today.setDate(today.getDate() + addDays);
 
   return format(nextDate);
-};
+}
 
-const categories = ['Art', 'Commedy', 'Dance', 'Film', 'Sport', 'Food', 'Thietre', 'Party', 'Music', 'Networking'];
-const county = ['Banska Bystrica', 'Bratislava', 'Nitra', 'Presov', 'Kosice', 'Trencin', 'Trnava', 'Zilina',];
+const categories = [
+  'Art',
+  'Commedy',
+  'Dance',
+  'Film',
+  'Sport',
+  'Food',
+  'Theater',
+  'Party',
+  'Music',
+  'Networking',
+];
+const county = [
+  'Banska Bystrica',
+  'Bratislava',
+  'Nitra',
+  'Presov',
+  'Kosice',
+  'Trencin',
+  'Trnava',
+  'Zilina',
+];
 
-module.exports = function () {
+module.exports = function() {
   var faker = require('faker');
   var _ = require('lodash');
   return {
-    events: _.times(35, function (index) {
+    events: _.times(35, function(index) {
       const randomEventDaysLength = Math.floor(Math.random() * 7);
       return {
         id: index,
@@ -48,7 +68,7 @@ module.exports = function () {
         deletedAt: null,
       };
     }),
-    comments: _.times(250, function (index) {
+    comments: _.times(250, function(index) {
       return {
         eventId: getRandomInt(1, 35),
         userId: getRandomInt(1, 45),
@@ -59,13 +79,12 @@ module.exports = function () {
           firstName: faker.name.firstName(),
           lastName: faker.name.lastName(),
         },
-        createdAt: createDate(- index),
+        createdAt: createDate(-index),
         updatedAt: null,
         deletedAt: null,
-
       };
     }),
-    users: _.times(45, function (index) {
+    users: _.times(45, function(index) {
       return {
         id: index,
         county: county[Math.floor(Math.random() * county.length)],
@@ -77,13 +96,13 @@ module.exports = function () {
           book: faker.lorem.words(),
           song: faker.lorem.words(),
           moto: faker.lorem.words(),
-          film: faker.lorem.words()
+          film: faker.lorem.words(),
         },
         going: getRandomIntegersArray(getRandomInt(0, 7), 35),
         interested: getRandomIntegersArray(getRandomInt(0, 12), 35),
         likes: getRandomIntegersArray(getRandomInt(0, 6), 35),
         age: getRandomInt(18, 50),
-        createdAt: createDate(- Math.floor(Math.random() * 1500)),
+        createdAt: createDate(-Math.floor(Math.random() * 1500)),
         updatedAt: null,
         deletedAt: null,
       };
