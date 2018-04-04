@@ -1,0 +1,59 @@
+.upcoming {
+  max-width: 33%;
+  max-height: 33.333%;
+  margin: auto;
+  list-style: none;
+  padding-left: 0;
+  background: #fff;
+  &__title {
+    font-weight: 600;
+    margin-bottom: 0;
+    padding: 1rem 0;
+  }
+}
+
+.upcoming-list {
+  list-style: none;
+  &__item {
+    padding: 1rem;
+    font-size: 0.875rem;
+    &__content {
+      display: flex;
+      justify-content: center;
+      &__date {
+        float: left;
+        font-size: 0.875rem;
+        margin-right: 12%;
+        text-align: left;
+        &__day {
+          font-weight: bold;
+          color: red;
+        }
+      }
+    }
+    &__info {
+      float: left;
+      font-size: 0.875rem;
+      text-align: left;
+      &__title {
+        font-style: italic;
+        font-weight: bold;
+      }
+    }
+    &__participation {
+      margin-top: 0.5rem;
+      &__btn {
+        margin-right: 0.5rem;
+        background: #a4d9f4;
+      }
+    }
+  }
+}
+
+.last {
+  margin-right: 0;
+}
+
+.line {
+  margin-top: 1rem;
+}

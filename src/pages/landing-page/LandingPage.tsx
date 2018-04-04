@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 import './landing-page.css';
-import { fetchEvents } from '../../ducks/events';
 
-type Props = {
-  fetchEvents: () => { type: string }
-};
+import UpcomingEvents from '../../bricks/upcoming-events/UpcomingEvents';
 
-class LandingPage extends Component<Props> {
-  componentDidMount() {
-    this.props.fetchEvents();
-  }
-
+class LandingPage extends Component {
   render() {
     return (
-      <div className="landing-page">Landing page</div>
+      <div className="landing-page">
+        <UpcomingEvents />
+      </div>
     );
   }
 }
 
-export default connect(null, { fetchEvents })(LandingPage);
+export default LandingPage;

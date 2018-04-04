@@ -1,0 +1,46 @@
+.upcoming {
+  max-width: 33%;
+  max-height: 33.333%;
+  margin: auto;
+  list-style: none;
+  padding-left: 0;
+  background: #fff; }
+  .upcoming__title {
+    font-weight: 600;
+    margin-bottom: 0;
+    padding: 1rem 0; }
+
+.upcoming-list {
+  list-style: none; }
+  .upcoming-list__item {
+    padding: 1rem;
+    font-size: 0.875rem; }
+    .upcoming-list__item__content {
+      display: flex;
+      justify-content: center; }
+      .upcoming-list__item__content__date {
+        float: left;
+        font-size: 0.875rem;
+        margin-right: 12%;
+        text-align: left; }
+        .upcoming-list__item__content__date__day {
+          font-weight: bold;
+          color: red; }
+    .upcoming-list__item__info {
+      float: left;
+      font-size: 0.875rem;
+      text-align: left; }
+      .upcoming-list__item__info__title {
+        font-style: italic;
+        font-weight: bold; }
+    .upcoming-list__item__participation {
+      margin-top: 0.5rem; }
+      .upcoming-list__item__participation__btn {
+        margin-right: 0.5rem;
+        background: #a4d9f4; }
+
+.last {
+  margin-right: 0; }
+
+.line {
+  margin-top: 1rem; }
