@@ -15,19 +15,28 @@ class SuggestedEvent extends Component<SuggestedEventProps> {
     const { events } = this.props;
     return events.map(singleEvent => {
       return (
-        <li className="suggested__item" key={singleEvent.id}>
-          <div className="">
+        <li className="suggested-list__item" key={singleEvent.id}>
+          <div className="clearfix">
             <div>
-              <img src={singleEvent.image} alt="pictures" />
+              <img className="suggested-list__item__image" src={singleEvent.image} alt="pictures" />
             </div>
 
-            <div>
-              <p>{singleEvent.name}</p>
+            <div className="suggested-list__item__content">
+              <p className="suggested-list__item__contenct__date">
+                <span>16.april </span>
+                {singleEvent.name}
+              </p>
               <p>{singleEvent.county}</p>
-            </div>
 
-            <div>
-              <span>16.april</span>
+              <div className="suggested-list__item__participation">
+                <button className="suggested-list__item__participation__btn">
+                  Going {singleEvent.going}
+                </button>
+
+                <button className="suggested-list__item__participation__btn last">
+                  Like {singleEvent.likes}
+                </button>
+              </div>
             </div>
           </div>
           <hr className="line" />
