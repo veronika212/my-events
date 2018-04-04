@@ -1,11 +1,11 @@
 .upcoming {
-  max-width: 33%;
-  max-height: 33.333%;
-  margin: auto;
+  width: 33%;
+  margin: 40px 70px;
   list-style: none;
   padding-left: 0;
   background: #fff; }
   .upcoming__title {
+    text-align: center;
     font-weight: 600;
     margin-bottom: 0;
     padding: 1rem 0; }
@@ -34,7 +34,8 @@
         font-style: italic;
         font-weight: bold; }
     .upcoming-list__item__participation {
-      margin-top: 0.5rem; }
+      margin-top: 0.5rem;
+      text-align: center; }
       .upcoming-list__item__participation__btn {
         margin-right: 0.5rem;
         background: #a4d9f4;

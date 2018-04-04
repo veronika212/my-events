@@ -16,7 +16,7 @@ class SuggestedEvent extends Component<SuggestedEventProps> {
     return events.map(singleEvent => {
       return (
         <li className="suggested__item" key={singleEvent.id}>
-          <div>
+          <div className="">
             <div>
               <img src={singleEvent.image} alt="pictures" />
             </div>
