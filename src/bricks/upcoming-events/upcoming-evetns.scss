@@ -1,7 +1,6 @@
 .upcoming {
   width: 33%;
   margin: 40px 70px;
-  list-style: none;
   padding-left: 0;
   background: #fff;
   &__title {
@@ -18,8 +17,7 @@
     padding: 0 1rem 0 1rem;
     font-size: 0.875rem;
     &__content {
-      display: flex;
-      justify-content: center;
+      margin-left: 3rem;
       &__date {
         float: left;
         font-size: 0.875rem;

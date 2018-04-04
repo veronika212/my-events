@@ -1,7 +1,6 @@
 .upcoming {
   width: 33%;
   margin: 40px 70px;
-  list-style: none;
   padding-left: 0;
   background: #fff; }
   .upcoming__title {
@@ -16,8 +15,7 @@
     padding: 0 1rem 0 1rem;
     font-size: 0.875rem; }
     .upcoming-list__item__content {
-      display: flex;
-      justify-content: center; }
+      margin-left: 3rem; }
       .upcoming-list__item__content__date {
         float: left;
         font-size: 0.875rem;
