@@ -1,0 +1,13 @@
+.menu {
+  display: flex;
+  list-style: none;
+  justify-content: center; }
+
+.nav-pills .nav-link.active {
+  color: #192c47;
+  background-color: #f7dc1b; }
+
+.nav-link {
+  color: #fff; }
+  .nav-link:hover {
+    color: #192c47; }

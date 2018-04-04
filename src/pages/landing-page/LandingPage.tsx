@@ -5,7 +5,7 @@ import './landing-page.css';
 import { fetchEvents } from '../../ducks/events';
 
 type Props = {
-  fetchEvents: () => { type: string }
+  fetchEvents: () => { type: string };
 };
 
 class LandingPage extends Component<Props> {
@@ -14,9 +14,7 @@ class LandingPage extends Component<Props> {
   }
 
   render() {
-    return (
-      <div className="landing-page">Landing page</div>
-    );
+    return <div className="landing-page" />;
   }
 }
 

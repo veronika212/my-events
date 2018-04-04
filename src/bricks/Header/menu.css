@@ -1,8 +1,0 @@
-.menu {
-  display: flex;
-  list-style: none;
-  justify-content: center; }
-
-.nav-pills .nav-link.active {
-  color: #fff;
-  background-color: orange; }

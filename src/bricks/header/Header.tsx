@@ -1,13 +1,11 @@
 import React from 'react';
 
 import './header.css';
-import Menu from './menu';
+import Menu from './Menu';
 
 const Header = () => (
   <div className="header">
-    <div className="jumbotron">
-      <Menu />
-    </div>
+    <Menu />
   </div>
 );
 
