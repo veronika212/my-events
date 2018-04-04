@@ -4,6 +4,13 @@
   justify-content: center;
 }
 .nav-pills .nav-link.active {
+  color: #192c47;
+  background-color: #f7dc1b;
+}
+
+.nav-link {
   color: #fff;
-  background-color: orange;
+  :hover {
+    color: #192c47;
+  }
 }

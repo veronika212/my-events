@@ -5,7 +5,7 @@ import Menu from './menu';
 
 const Header = () => (
   <div className="header">
-    <div className="jumbotron">
+    <div>
       <Menu />
     </div>
   </div>
