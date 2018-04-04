@@ -38,7 +38,7 @@ class UpcomingEvents extends Component<UpcomingEventsProps> {
               Going {singleEvent.going}
             </button>
             <button className="upcoming-list__item__participation__btn">
-              Interested {singleEvent.interested}
+              Interest {singleEvent.interested}
             </button>
             <button className="upcoming-list__item__participation__btn last">
               Like {singleEvent.likes}

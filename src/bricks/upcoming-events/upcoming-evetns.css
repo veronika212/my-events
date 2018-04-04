@@ -13,7 +13,7 @@
 .upcoming-list {
   list-style: none; }
   .upcoming-list__item {
-    padding: 1rem;
+    padding: 0 1rem 0 1rem;
     font-size: 0.875rem; }
     .upcoming-list__item__content {
       display: flex;
@@ -37,10 +37,11 @@
       margin-top: 0.5rem; }
       .upcoming-list__item__participation__btn {
         margin-right: 0.5rem;
-        background: #a4d9f4; }
+        background: #a4d9f4;
+        width: 6.313rem; }
 
 .last {
   margin-right: 0; }
 
 .line {
-  margin-top: 1rem; }
+  margin: 1rem 0; }
