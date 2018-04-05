@@ -1,6 +1,5 @@
-.landing-page {
+.landing-page__events-background {
   background-color: #f7dc1b;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  max-height: 500px; }
+  justify-content: center; }

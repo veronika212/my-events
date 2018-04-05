@@ -19,13 +19,15 @@
     font-size: 0.875rem;
     margin: 0px 2rem;
     &__image {
-      max-width: 5rem;
+      width: 25%;
       float: left;
     }
     &__content {
+      width: 75%;
       float: left;
       padding-left: 2rem;
     }
+
     &__participation {
       margin-top: 0.5rem;
       text-align: center;

@@ -14,9 +14,10 @@
   font-size: 0.875rem;
   margin: 0px 2rem; }
   .suggested-list__item__image {
-    max-width: 5rem;
+    width: 25%;
     float: left; }
   .suggested-list__item__content {
+    width: 75%;
     float: left;
     padding-left: 2rem; }
   .suggested-list__item__participation {
@@ -24,5 +25,5 @@
     text-align: center; }
     .suggested-list__item__participation__btn {
       margin-right: 0.5rem;
-      background: #6b8c9c;
+      background: #a4d9f4;
       width: 6.313rem; }

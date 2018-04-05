@@ -9,8 +9,10 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="landing-page">
-        <UpcomingEvents />
-        <SuggestedEvents />
+        <div className="landing-page__events-background">
+          <UpcomingEvents />
+          <SuggestedEvents />
+        </div>
       </div>
     );
   }

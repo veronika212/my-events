@@ -1,7 +1,10 @@
+@import '../../css/colors.css';
+
 .landing-page {
-  background-color: #f7dc1b;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  max-height: 500px;
+  &__events-background {
+    background-color: $color-yellow;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }

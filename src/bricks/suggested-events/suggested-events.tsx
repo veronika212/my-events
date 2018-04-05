@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import format from 'date-fns/format';
 
 import { fetchEvents } from '../../ducks/events';
 import { Event } from '../../ducks/events';
@@ -20,11 +21,17 @@ class SuggestedEvent extends Component<SuggestedEventProps> {
             <img className="suggested-list__item__image" src={singleEvent.image} alt="pictures" />
 
             <div className="suggested-list__item__content">
-              <p className="suggested-list__item__contenct__date">
-                <span>16.april </span>
-                {singleEvent.name}
-              </p>
-              <p>{singleEvent.county}</p>
+              <div className="suggested-list__item__date">
+                <p className="suggested-list__item__date__date">
+                  {format(singleEvent.startDate, 'DD MMM')}
+                </p>
+                <p>{format(singleEvent.startDate, 'dd')}</p>
+              </div>
+
+              <div>
+                <p>{singleEvent.name}</p>
+                <p>{singleEvent.county}</p>
+              </div>
 
               <div className="suggested-list__item__participation">
                 <button className="suggested-list__item__participation__btn">
