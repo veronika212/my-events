@@ -2,27 +2,34 @@
   width: 30%;
   margin: 40px 0px;
   padding-left: 0;
-  background: #fff; }
-  .suggested__title {
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 0;
-    padding: 1rem 0; }
+  background: #ffffff;
+}
+.suggested__title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding: 1rem 0;
+}
 
 .suggested-list__item {
   list-style: none;
   font-size: 0.875rem;
-  margin: 0px 2rem; }
-  .suggested-list__item__image {
-    max-width: 5rem;
-    float: left; }
-  .suggested-list__item__content {
-    float: left;
-    padding-left: 2rem; }
-  .suggested-list__item__participation {
-    margin-top: 0.5rem;
-    text-align: center; }
-    .suggested-list__item__participation__btn {
-      margin-right: 0.5rem;
-      background: #a4d9f4;
-      width: 6.313rem; }
+  margin: 0px 2rem;
+}
+.suggested-list__item__image {
+  max-width: 5rem;
+  float: left;
+}
+.suggested-list__item__content {
+  float: left;
+  padding-left: 2rem;
+}
+.suggested-list__item__participation {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+.suggested-list__item__participation__btn {
+  margin-right: 0.5rem;
+  background: #a4d9f4;
+  width: 6.313rem;
+}

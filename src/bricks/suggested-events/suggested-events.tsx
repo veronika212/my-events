@@ -17,9 +17,7 @@ class SuggestedEvent extends Component<SuggestedEventProps> {
       return (
         <li className="suggested-list__item" key={singleEvent.id}>
           <div className="clearfix">
-            <div>
-              <img className="suggested-list__item__image" src={singleEvent.image} alt="pictures" />
-            </div>
+            <img className="suggested-list__item__image" src={singleEvent.image} alt="pictures" />
 
             <div className="suggested-list__item__content">
               <p className="suggested-list__item__contenct__date">

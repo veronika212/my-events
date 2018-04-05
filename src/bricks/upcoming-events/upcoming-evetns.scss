@@ -1,8 +1,10 @@
+@import '../../css/colors.scss';
+
 .upcoming {
   width: 33%;
   margin: 40px 70px;
   padding-left: 0;
-  background: #fff;
+  background: $color-white;
   &__title {
     text-align: center;
     font-weight: 600;
@@ -25,7 +27,7 @@
         text-align: left;
         &__day {
           font-weight: bold;
-          color: red;
+          color: $color-red;
         }
       }
     }
