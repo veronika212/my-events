@@ -14,12 +14,22 @@
   font-size: 0.875rem;
   margin: 0px 2rem; }
   .suggested-list__item__image {
-    width: 25%;
-    float: left; }
+    width: 20%;
+    float: left;
+    padding-top: 0.5rem; }
   .suggested-list__item__content {
     width: 75%;
     float: left;
     padding-left: 2rem; }
+  .suggested-list__item__date {
+    float: left;
+    padding-right: 2rem; }
+    .suggested-list__item__date__date {
+      color: red;
+      font-weight: 600; }
+  .suggested-list__item__name {
+    font-weight: bold;
+    font-style: italic; }
   .suggested-list__item__participation {
     margin-top: 0.5rem;
     text-align: center; }

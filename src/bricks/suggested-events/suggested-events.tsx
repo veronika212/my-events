@@ -29,7 +29,7 @@ class SuggestedEvent extends Component<SuggestedEventProps> {
               </div>
 
               <div>
-                <p>{singleEvent.name}</p>
+                <p className="suggested-list__item__name">{singleEvent.name}</p>
                 <p>{singleEvent.county}</p>
               </div>
 

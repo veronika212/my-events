@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import format from 'date-fns/format';
 
 import { fetchEvents } from '../../ducks/events';
 import { Event } from '../../ducks/events';
@@ -22,9 +23,11 @@ class UpcomingEvents extends Component<UpcomingEventsProps> {
       return (
         <li className="upcoming-list__item" key={singleEvent.id}>
           <div className="upcoming-list__item__content clearfix">
-            <div className="upcoming-list__item__content__date">
-              <p className="upcoming-list__item__content__date__day">APR 23</p>
-              <p>F</p>
+            <div className="suggested-list__item__date">
+              <p className="suggested-list__item__date__date">
+                {format(singleEvent.startDate, 'DD MMM')}
+              </p>
+              <p>{format(singleEvent.startDate, 'dd')}</p>
             </div>
 
             <div className="upcoming-list__item__info">

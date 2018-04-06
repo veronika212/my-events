@@ -19,15 +19,27 @@
     font-size: 0.875rem;
     margin: 0px 2rem;
     &__image {
-      width: 25%;
+      width: 20%;
       float: left;
+      padding-top: 0.5rem;
     }
     &__content {
       width: 75%;
       float: left;
       padding-left: 2rem;
     }
-
+    &__date {
+      float: left;
+      padding-right: 2rem;
+      &__date {
+        color: $color-red;
+        font-weight: 600;
+      }
+    }
+    &__name {
+      font-weight: bold;
+      font-style: italic;
+    }
     &__participation {
       margin-top: 0.5rem;
       text-align: center;
