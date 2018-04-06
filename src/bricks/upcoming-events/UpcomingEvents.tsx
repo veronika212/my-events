@@ -5,6 +5,7 @@ import format from 'date-fns/format';
 
 import { fetchEvents } from '../../ducks/events';
 import { Event } from '../../ducks/events';
+// import Buttons from '../../bricks/buttons/Buttons';
 import './upcoming-evetns.css';
 
 interface UpcomingEventsProps {
@@ -51,6 +52,9 @@ class UpcomingEvents extends Component<UpcomingEventsProps> {
         </li>
       );
     });
+    /*return(
+      <Buttons/>
+    )*/
   };
 
   render() {
