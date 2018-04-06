@@ -1,7 +1,7 @@
 .upcoming {
   width: 33%;
-  margin: 40px 70px;
-  padding-left: 0;
+  margin: 2.5rem 4rem;
+  padding: 0;
   background: #ffffff; }
   .upcoming__title {
     text-align: center;
@@ -34,10 +34,6 @@
     .upcoming-list__item__participation {
       margin-top: 0.5rem;
       text-align: center; }
-      .upcoming-list__item__participation__btn {
-        margin-right: 0.5rem;
-        background: #a4d9f4;
-        width: 6.313rem; }
 
 .last {
   margin-right: 0; }

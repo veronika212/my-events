@@ -5,7 +5,8 @@ import format from 'date-fns/format';
 
 import { fetchEvents } from '../../ducks/events';
 import { Event } from '../../ducks/events';
-// import Buttons from '../../bricks/buttons/Buttons';
+import { Button } from '../../bricks';
+
 import './upcoming-evetns.css';
 
 interface UpcomingEventsProps {
@@ -38,23 +39,14 @@ class UpcomingEvents extends Component<UpcomingEventsProps> {
           </div>
 
           <div className="upcoming-list__item__participation">
-            <button className="upcoming-list__item__participation__btn">
-              Going {singleEvent.going}
-            </button>
-            <button className="upcoming-list__item__participation__btn">
-              Interest {singleEvent.interested}
-            </button>
-            <button className="upcoming-list__item__participation__btn last">
-              Like {singleEvent.likes}
-            </button>
+            <Button label={`Going ${singleEvent.going}`} />
+            <Button label={`Interest ${singleEvent.interested}`} />
+            <Button label={`Like ${singleEvent.likes}`} />
           </div>
           <hr className="line" />
         </li>
       );
     });
-    /*return(
-      <Buttons/>
-    )*/
   };
 
   render() {

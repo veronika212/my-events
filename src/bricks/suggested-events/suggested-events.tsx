@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import format from 'date-fns/format';
 
+import { Button } from '../../bricks';
 import { fetchEvents } from '../../ducks/events';
 import { Event } from '../../ducks/events';
 import './suggested-events.css';
@@ -34,13 +35,8 @@ class SuggestedEvent extends Component<SuggestedEventProps> {
               </div>
 
               <div className="suggested-list__item__participation">
-                <button className="suggested-list__item__participation__btn">
-                  Going {singleEvent.going}
-                </button>
-
-                <button className="suggested-list__item__participation__btn last">
-                  Like {singleEvent.likes}
-                </button>
+                <Button type="danger" label={`Going ${singleEvent.going}`} />
+                <Button label={`Like ${singleEvent.likes}`} />
               </div>
             </div>
           </div>
