@@ -1,39 +1,47 @@
 .suggested {
   width: 30%;
-  margin: 40px 0px;
+  margin: 2.5rem 4rem 2.5rem 0;
   padding-left: 0;
   background: #ffffff; }
-  .suggested__title {
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 0;
-    padding: 1rem 0; }
 
-.suggested-list__item {
-  list-style: none;
+.suggested-title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding: 1rem 0; }
+
+.suggested-list {
+  list-style: none; }
+
+.suggested-item {
   font-size: 0.875rem;
   margin: 0px 2rem; }
-  .suggested-list__item__image {
+  .suggested-item .item-image {
     width: 20%;
-    float: left;
-    padding-top: 0.5rem; }
-  .suggested-list__item__content {
+    float: left; }
+  .suggested-item .item-content {
     width: 75%;
     float: left;
     padding-left: 2rem; }
-  .suggested-list__item__date {
-    float: left;
-    padding-right: 2rem; }
-    .suggested-list__item__date__date {
+    .suggested-item .item-content__date {
+      float: left;
+      padding-right: 1rem; }
+    .suggested-item .item-content__date_title {
       color: red;
       font-weight: 600; }
-  .suggested-list__item__name {
-    font-weight: bold;
-    font-style: italic; }
-  .suggested-list__item__participation {
+    .suggested-item .item-content__info {
+      float: left;
+      font-size: 0.875rem;
+      text-align: left; }
+    .suggested-item .item-content__info_title {
+      font-style: italic;
+      font-weight: bold; }
+  .suggested-item .item-participation {
     margin-top: 0.5rem;
-    text-align: center; }
-    .suggested-list__item__participation__btn {
-      margin-right: 0.5rem;
-      background: #a4d9f4;
-      width: 6.313rem; }
+    text-align: center;
+    float: left; }
+    .suggested-item .item-participation__last-button {
+      margin-right: 0; }
+
+.line {
+  margin: 1rem 0; }
