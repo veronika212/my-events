@@ -18,6 +18,7 @@ export const fetchEvents = () => {
 };
 
 export interface Event {
+  id: number;
   name: string;
   image: string;
   description: string;
@@ -52,8 +53,8 @@ const defaultState = {
   filters: {
     category: null,
     date: null,
-    county: null
-  }
+    county: null,
+  },
 };
 
 export const eventsReducer = (state: EventReducerModel = defaultState, action: any) => {
@@ -61,7 +62,7 @@ export const eventsReducer = (state: EventReducerModel = defaultState, action: a
     case FETCH_EVENTS_SUCCESS:
       return {
         ...state,
-        events: [...action.payload]
+        events: [...action.payload],
       };
     case FETCH_EVENTS_FAIL:
       return action.payload.data;

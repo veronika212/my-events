@@ -3,23 +3,27 @@ import format from 'date-fns/format';
 
 const EventTile = props => {
   return (
-    <div>
-      <div>
-        <img src={props.image} alt="pictures" />
-      </div>
-
-      <div>
+    <ul>
+      <li>
         <div>
-          <p>{format(props.startDate, 'DD MMM')}</p>
-          <p>{format(props.startDate, 'dd')}</p>
-        </div>
+          <div>
+            <img src={props.image} alt="pictures" />
+          </div>
 
-        <div>
-          <p>{props.name}</p>
-          <p>{props.county}</p>
+          <div>
+            <div>
+              <p>{format(props.startDate, 'DD MMM')}</p>
+              <p>{format(props.startDate, 'dd')}</p>
+            </div>
+
+            <div>
+              <p>{props.name}</p>
+              <p>{props.county}</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
   );
 };
 
