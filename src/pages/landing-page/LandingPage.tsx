@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './landing-page.css';
 
 import UpcomingEvents from '../../bricks/upcoming-events/UpcomingEvents';
-import SuggestedEvents from '../../bricks/suggested-events/suggested-events';
+import SuggestedEvents from '../../bricks/suggested-events/SuggestedEvents';
 
 class LandingPage extends Component {
   render() {

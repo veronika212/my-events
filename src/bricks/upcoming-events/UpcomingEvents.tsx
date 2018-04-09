@@ -23,25 +23,28 @@ class UpcomingEvents extends Component<UpcomingEventsProps> {
     const { events } = this.props;
     return events.map(singleEvent => {
       return (
-        <li className="upcoming-list__item" key={singleEvent.id}>
-          <div className="upcoming-list__item__content clearfix">
-            <div className="suggested-list__item__date">
-              <p className="suggested-list__item__date__date">
+        <li className="upcoming-item" key={singleEvent.id}>
+          <div className="item-content clearfix">
+            <div className="item-content__date">
+              <p className="item-content__date item-content__date_title">
                 {format(singleEvent.startDate, 'DD MMM')}
               </p>
               <p>{format(singleEvent.startDate, 'dd')}</p>
             </div>
 
-            <div className="upcoming-list__item__info">
-              <p className="upcoming-list__item__info__title">{singleEvent.name}</p>
+            <div className="item-content__info">
+              <p className="item-content__info item-content__info_title">{singleEvent.name}</p>
               <p>{singleEvent.county}</p>
             </div>
           </div>
 
-          <div className="upcoming-list__item__participation">
+          <div className="item-participation">
             <Button label={`Going ${singleEvent.going}`} />
             <Button label={`Interest ${singleEvent.interested}`} />
-            <Button label={`Like ${singleEvent.likes}`} />
+            <Button
+              className="item-participation__last-button"
+              label={`Like ${singleEvent.likes}`}
+            />
           </div>
           <hr className="line" />
         </li>
@@ -52,7 +55,7 @@ class UpcomingEvents extends Component<UpcomingEventsProps> {
   render() {
     return (
       <div className="upcoming">
-        <h4 className="upcoming__title">UPCOMING EVENTS</h4>
+        <h4 className="upcoming-title">UPCOMING EVENTS</h4>
         <ul className="upcoming-list">{this.renderUpcomintEvent()}</ul>
       </div>
     );

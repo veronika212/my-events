@@ -3,40 +3,42 @@
   margin: 2.5rem 4rem;
   padding: 0;
   background: #ffffff; }
-  .upcoming__title {
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 0;
-    padding: 1rem 0; }
+
+.upcoming-title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding: 1rem 0; }
 
 .upcoming-list {
   list-style: none; }
-  .upcoming-list__item {
-    padding: 0 1rem 0 1rem;
-    font-size: 0.875rem; }
-    .upcoming-list__item__content {
-      margin-left: 3rem; }
-      .upcoming-list__item__content__date {
-        float: left;
-        font-size: 0.875rem;
-        margin-right: 12%;
-        text-align: left; }
-        .upcoming-list__item__content__date__date {
-          font-weight: bold;
-          color: red; }
-    .upcoming-list__item__info {
+
+.upcoming-item {
+  padding: 0 1rem 0 1rem;
+  font-size: 0.875rem; }
+  .upcoming-item .item-content {
+    margin-left: 3rem; }
+    .upcoming-item .item-content__date {
+      float: left;
+      font-size: 0.875rem;
+      margin-right: 3rem;
+      text-align: left; }
+    .upcoming-item .item-content__date_title {
+      font-weight: bold;
+      color: red;
+      margin-right: 0; }
+    .upcoming-item .item-content__info {
       float: left;
       font-size: 0.875rem;
       text-align: left; }
-      .upcoming-list__item__info__title {
-        font-style: italic;
-        font-weight: bold; }
-    .upcoming-list__item__participation {
-      margin-top: 0.5rem;
-      text-align: center; }
-
-.last {
-  margin-right: 0; }
+    .upcoming-item .item-content__info_title {
+      font-style: italic;
+      font-weight: bold; }
+  .upcoming-item .item-participation {
+    margin-top: 0.5rem;
+    text-align: center; }
+    .upcoming-item .item-participation__last-button {
+      margin-right: 0; }
 
 .line {
   margin: 1rem 0; }

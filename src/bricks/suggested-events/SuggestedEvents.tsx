@@ -17,26 +17,29 @@ class SuggestedEvent extends Component<SuggestedEventProps> {
     const { events } = this.props;
     return events.map(singleEvent => {
       return (
-        <li className="suggested-list__item" key={singleEvent.id}>
+        <li className="suggested-item" key={singleEvent.id}>
           <div className="clearfix">
-            <img className="suggested-list__item__image" src={singleEvent.image} alt="pictures" />
+            <img className="item-image" src={singleEvent.image} alt="pictures" />
 
-            <div className="suggested-list__item__content">
-              <div className="suggested-list__item__date">
-                <p className="suggested-list__item__date__date">
+            <div className="item-content">
+              <div className="item-content__date">
+                <p className="item-content__date item-content__date_title">
                   {format(singleEvent.startDate, 'DD MMM')}
                 </p>
                 <p>{format(singleEvent.startDate, 'dd')}</p>
               </div>
 
-              <div>
-                <p className="suggested-list__item__name">{singleEvent.name}</p>
+              <div className="item-content__info">
+                <p className="item-content__ifno item-content__info_title">{singleEvent.name}</p>
                 <p>{singleEvent.county}</p>
               </div>
 
-              <div className="suggested-list__item__participation">
+              <div className="item-participation">
                 <Button type="danger" label={`Going ${singleEvent.going}`} />
-                <Button label={`Like ${singleEvent.likes}`} />
+                <Button
+                  className="item-participation__last-button"
+                  label={`Like ${singleEvent.likes}`}
+                />
               </div>
             </div>
           </div>
@@ -49,7 +52,7 @@ class SuggestedEvent extends Component<SuggestedEventProps> {
   render() {
     return (
       <div className="suggested">
-        <h4 className="suggested__title">SUGGESTED</h4>
+        <h4 className="suggested-title">SUGGESTED</h4>
         <ul className="suggested-list">{this.renderSuggestedEvent()}</ul>
       </div>
     );
