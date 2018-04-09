@@ -15,10 +15,9 @@ function getRandomIntegersArray(arrayLength, max) {
   return randomArray.filter((v, i, a) => a.indexOf(v) === i);
 }
 
-function createDate(addDays) {
+function createDate(days) {
   const today = new Date();
-  const nextDate = today.setDate(today.getDate() + addDays);
-
+  const nextDate = today.setDate(today.getDate() + days);
   return format(nextDate);
 }
 

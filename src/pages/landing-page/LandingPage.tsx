@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchEvents, Event } from '../../ducks/events';
 import './landing-page.css';
-
+import { fetchEvents, Event } from '../../ducks/events';
+import UpcomingEvents from '../../bricks/upcoming-events/UpcomingEvents';
+import SuggestedEvents from '../../bricks/suggested-events/suggested-events';
 import EventTile from '../../bricks/event-tile/EventTile';
 
 interface LandingPageProps {
-  fetchEvents: () => { type: string };
+  fetchEvents: () => { type: string; limit: null };
   events: Event[];
 }
 
 class LandingPage extends Component<LandingPageProps> {
-  render() {
+  renderTiles() {
     const { events } = this.props;
-    if (!events) {
-      return <div>Loading...</div>;
-    }
-
     return events.map(singleEventTile => {
       return (
         <div className="landing-page" key={singleEventTile.id}>
@@ -27,6 +24,24 @@ class LandingPage extends Component<LandingPageProps> {
         </div>
       );
     });
+  }
+
+  render() {
+    const { events } = this.props;
+
+    if (!events) {
+      return <div>Loading...</div>;
+    }
+
+    return (
+      <div>
+        <div className="landing-page__events-background">
+          <UpcomingEvents />
+          <SuggestedEvents />
+        </div>
+        <div>{this.renderTiles()}</div>
+      </div>
+    );
   }
 }
 

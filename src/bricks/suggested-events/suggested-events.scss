@@ -1,0 +1,53 @@
+@import '../../css/colors.scss';
+
+.suggested {
+  width: 30%;
+  margin: 40px 0px;
+  padding-left: 0;
+  background: $color-white;
+  &__title {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 0;
+    padding: 1rem 0;
+  }
+}
+
+.suggested-list {
+  &__item {
+    list-style: none;
+    font-size: 0.875rem;
+    margin: 0px 2rem;
+    &__image {
+      width: 20%;
+      float: left;
+      padding-top: 0.5rem;
+    }
+    &__content {
+      width: 75%;
+      float: left;
+      padding-left: 2rem;
+    }
+    &__date {
+      float: left;
+      padding-right: 2rem;
+      &__date {
+        color: $color-red;
+        font-weight: 600;
+      }
+    }
+    &__name {
+      font-weight: bold;
+      font-style: italic;
+    }
+    &__participation {
+      margin-top: 0.5rem;
+      text-align: center;
+      &__btn {
+        margin-right: 0.5rem;
+        background: $color-light-blue;
+        width: 6.313rem;
+      }
+    }
+  }
+}

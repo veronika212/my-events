@@ -11,9 +11,10 @@ const FETCH_EVENTS_FAIL = 'FETCH_EVENTS_FAIL';
 /**
  * Action creators
  */
-export const fetchEvents = () => {
+export const fetchEvents = (limit?: number) => {
   return {
     type: FETCH_EVENTS,
+    limit,
   };
 };
 
@@ -35,21 +36,21 @@ export interface Event {
 }
 
 export interface Filters {
-  category: string | null;
-  date: string | null;
-  county: string | null;
+  category?: string;
+  date?: string;
+  county?: string;
 }
 
 export interface EventReducerModel {
   filters: Filters;
-  events: Event[];
+  data: Event[];
 }
 
 /**
  * Reducer
  */
 const defaultState = {
-  events: [],
+  data: [],
   filters: {
     category: null,
     date: null,
@@ -62,7 +63,7 @@ export const eventsReducer = (state: EventReducerModel = defaultState, action: a
     case FETCH_EVENTS_SUCCESS:
       return {
         ...state,
-        events: [...action.payload],
+        data: [...action.payload],
       };
     case FETCH_EVENTS_FAIL:
       return action.payload.data;
@@ -74,9 +75,9 @@ export const eventsReducer = (state: EventReducerModel = defaultState, action: a
 /**
  * Sagas
  */
-function* fetchEventsSaga() {
+function* fetchEventsSaga(action: { type: string; limit: number }) {
   try {
-    const resp = yield call(axios.get, 'http://localhost:3011/events');
+    const resp = yield call(axios.get, `http://localhost:3011/events?_limit=${action.limit}`);
 
     yield put({
       type: FETCH_EVENTS_SUCCESS,

@@ -1,0 +1,10 @@
+@import '../../css/colors.scss';
+
+.landing-page {
+  &__events-background {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: $color-yellow;
+  }
+}
