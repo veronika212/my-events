@@ -2,20 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import './landing-page.css';
-import { fetchEvents } from '../../ducks/events';
 
-type Props = {
-  fetchEvents: () => { type: string };
-};
+import EventTile from '../../bricks/event-tile/EventTile';
 
-class LandingPage extends Component<Props> {
-  componentDidMount() {
-    this.props.fetchEvents();
-  }
-
+class LandingPage extends Component {
   render() {
-    return <div className="landing-page" />;
+    return (
+      <div className="landing-page">
+        <div className="landing-page__events-background">
+          <EventTile />
+        </div>
+      </div>
+    );
   }
 }
 
-export default connect(null, { fetchEvents })(LandingPage);
+export default LandingPage;
