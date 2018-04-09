@@ -8,11 +8,15 @@ import SuggestedEvents from '../../bricks/suggested-events/suggested-events';
 import EventTile from '../../bricks/event-tile/EventTile';
 
 interface LandingPageProps {
-  fetchEvents: () => { type: string; limit: null };
+  fetchEvents: (limit?: number) => { type: string; limit: number };
   events: Event[];
 }
 
 class LandingPage extends Component<LandingPageProps> {
+  componentDidMount() {
+    this.props.fetchEvents();
+  }
+
   renderTiles() {
     const { events } = this.props;
     return events.map(singleEventTile => {

@@ -75,9 +75,11 @@ export const eventsReducer = (state: EventReducerModel = defaultState, action: a
 /**
  * Sagas
  */
-function* fetchEventsSaga(action: { type: string; limit: number }) {
+function* fetchEventsSaga(action: { type: string; limit?: number }) {
   try {
-    const resp = yield call(axios.get, `http://localhost:3011/events?_limit=${action.limit}`);
+    const baseURL = 'http://localhost:3011/events';
+    const url = action.limit === undefined ? baseURL : `${baseURL}?_limit=${action.limit}`;
+    const resp = yield call(axios.get, url);
 
     yield put({
       type: FETCH_EVENTS_SUCCESS,
@@ -94,3 +96,14 @@ function* fetchEventsSaga(action: { type: string; limit: number }) {
 export default function* saga() {
   yield takeLatest(FETCH_EVENTS, fetchEventsSaga);
 }
+
+/**
+ * Selectors
+ */
+export const getUpcomingEvents = state => {
+  return state.events.data.slice(0, 3);
+};
+
+export const getSugestedEvents = state => {
+  return state.events.data.slice(4, 7);
+};
