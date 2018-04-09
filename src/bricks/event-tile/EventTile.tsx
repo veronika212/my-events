@@ -1,13 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
+import format from 'date-fns/format';
 
-class EventTile extends Component {
-  render() {
-    return (
+const EventTile = props => {
+  return (
+    <div>
       <div>
-        <h1>Event Tile</h1>
+        <img src={props.image} alt="pictures" />
       </div>
-    );
-  }
-}
+
+      <div>
+        <div>
+          <p>{format(props.startDate, 'DD MMM')}</p>
+          <p>{format(props.startDate, 'dd')}</p>
+        </div>
+
+        <div>
+          <p>{props.name}</p>
+          <p>{props.county}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default EventTile;
