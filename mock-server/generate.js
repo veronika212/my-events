@@ -44,6 +44,16 @@ const county = [
   'Zilina',
 ];
 
+const places = [
+  'Magio Plaz',
+  'Zepelin Cafe',
+  'Amfik Cafe',
+  'Mestka sportova hala Piestany',
+  'City Arena Trnava',
+  'Synagoga Cafe',
+  'Thalmainer',
+];
+
 module.exports = function() {
   var faker = require('faker');
   var _ = require('lodash');
@@ -55,6 +65,13 @@ module.exports = function() {
         name: faker.company.companyName(),
         image: faker.image.avatar(),
         description: faker.lorem.text(),
+        address: {
+          street: faker.address.streetAddress(),
+          city: faker.address.city(),
+          zipCode: faker.address.zipCode(),
+          state: faker.address.state(),
+          place: places[Math.floor(Math.random() * places.length)],
+        },
         going: getRandomInt(0, 133),
         likes: getRandomInt(0, 500),
         interested: getRandomInt(0, 300),

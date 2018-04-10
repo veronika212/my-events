@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import format from 'date-fns/format';
 
 import { Button } from '../../bricks';
-import { fetchEvents } from '../../ducks/events';
+import { getSugestedEvents } from '../../ducks/events';
 import { Event } from '../../ducks/events';
 import './suggested-events.css';
 
 interface SuggestedEventProps {
-  fetchEvents: (limit: number) => { type: string; limit: number };
   events: Event[];
 }
 
@@ -61,8 +60,8 @@ class SuggestedEvent extends Component<SuggestedEventProps> {
 
 const mapStateToProps = state => {
   return {
-    events: state.events.data,
+    events: getSugestedEvents(state),
   };
 };
 
-export default connect(mapStateToProps, { fetchEvents })(SuggestedEvent);
+export default connect(mapStateToProps)(SuggestedEvent);

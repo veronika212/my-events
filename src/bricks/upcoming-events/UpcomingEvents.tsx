@@ -3,22 +3,17 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import format from 'date-fns/format';
 
-import { fetchEvents } from '../../ducks/events';
+import { getUpcomingEvents } from '../../ducks/events';
 import { Event } from '../../ducks/events';
 import { Button } from '../../bricks';
 
 import './upcoming-evetns.css';
 
 interface UpcomingEventsProps {
-  fetchEvents: (limit: number) => { type: string; limit: number };
   events: Event[];
 }
 
 class UpcomingEvents extends Component<UpcomingEventsProps> {
-  componentDidMount() {
-    this.props.fetchEvents(3);
-  }
-
   renderUpcomintEvent = () => {
     const { events } = this.props;
     return events.map(singleEvent => {
@@ -64,8 +59,8 @@ class UpcomingEvents extends Component<UpcomingEventsProps> {
 
 const mapStateToProps = state => {
   return {
-    events: state.events.data,
+    events: getUpcomingEvents(state),
   };
 };
 
-export default connect(mapStateToProps, { fetchEvents })(UpcomingEvents);
+export default connect(mapStateToProps)(UpcomingEvents);
