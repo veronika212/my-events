@@ -7,6 +7,7 @@ import { createBrowserHistory } from 'history';
 import { store } from './store/store';
 import App from './App';
 import LandingPage from './pages/landing-page/LandingPage';
+import EventDetail from './pages/event-detail/EventDetail';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -18,6 +19,7 @@ ReactDOM.render(
       <App>
         <Switch>
           <Route exact={true} path="/" component={LandingPage} />
+          <Route exact={true} path="/event/:id" component={EventDetail} />
         </Switch>
       </App>
     </Router>

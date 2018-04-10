@@ -4,19 +4,23 @@ import createSagaMiddleware from 'redux-saga';
 import { reducer as formReducer } from 'redux-form';
 
 import rootSaga from './rootSaga';
-import { eventsReducer } from '../ducks/events';
+import { eventsReducer, eventDetailReducer } from '../ducks/events';
 
 const rootReducer = combineReducers({
   events: eventsReducer,
-  // eventDetail: eventDetailReducer,
+  eventDetail: eventDetailReducer,
   // users: usersReducer,
   // userDetail: userDetailReducer,
   form: formReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
-const windowIfDefined = typeof window === 'undefined' ? null : window as any;
+const windowIfDefined = typeof window === 'undefined' ? null : (window as any);
 const composeEnhancers = windowIfDefined.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-export const store: any = createStore(rootReducer, {}, composeEnhancers(applyMiddleware(sagaMiddleware, logger)));
+export const store: any = createStore(
+  rootReducer,
+  {},
+  composeEnhancers(applyMiddleware(sagaMiddleware, logger))
+);
 
 sagaMiddleware.run(rootSaga);
