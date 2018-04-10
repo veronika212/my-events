@@ -42,7 +42,8 @@
       font-size: 0.875rem;
       text-align: left;
     }
-    &__info_title {
+    &__info-title {
+      color: $color-black;
       font-style: italic;
       font-weight: bold;
     }

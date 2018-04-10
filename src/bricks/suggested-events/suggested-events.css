@@ -33,7 +33,8 @@
       float: left;
       font-size: 0.875rem;
       text-align: left; }
-    .suggested-item .item-content__info_title {
+    .suggested-item .item-content__info-title {
+      color: black;
       font-style: italic;
       font-weight: bold; }
   .suggested-item .item-participation {

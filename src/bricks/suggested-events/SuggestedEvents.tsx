@@ -31,8 +31,10 @@ class SuggestedEvent extends Component<SuggestedEventProps> {
               </div>
 
               <div className="item-content__info">
-                <p className="item-content__ifno item-content__info_title">
-                  <Link to={`/event/${singleEvent.id}`}>{singleEvent.name}</Link>
+                <p>
+                  <Link className="item-content__info-title" to={`/event/${singleEvent.id}`}>
+                    {singleEvent.name}
+                  </Link>
                 </p>
                 <p>{singleEvent.county}</p>
               </div>
