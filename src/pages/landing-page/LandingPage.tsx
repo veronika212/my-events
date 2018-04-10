@@ -22,11 +22,12 @@ class LandingPage extends Component<LandingPageProps> {
     return events.map(singleEventTile => {
       return (
         <EventTile
+          key={singleEventTile.id}
           name={singleEventTile.name}
           image={singleEventTile.image}
-          conty={singleEventTile.county}
+          county={singleEventTile.county}
           startDate={singleEventTile.startDate}
-          key={singleEventTile.id}
+          address={singleEventTile.address}
         />
       );
     });
@@ -45,7 +46,7 @@ class LandingPage extends Component<LandingPageProps> {
           <UpcomingEvents />
           <SuggestedEvents />
         </div>
-        <div>{this.renderTiles()}</div>
+        <div className="event-tiles-list">{this.renderTiles()}</div>
       </div>
     );
   }

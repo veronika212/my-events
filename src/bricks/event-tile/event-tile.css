@@ -1,0 +1,31 @@
+.event-tile {
+  width: 20%;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  flex-grow: 1; }
+  .event-tile__image {
+    width: 100%; }
+  .event-tile__content {
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: none; }
+
+.event-tile-date__date-day {
+  float: left;
+  padding-right: 2rem; }
+
+.event-tile-date__date-title {
+  color: red;
+  font-weight: bold; }
+
+.event-tile-date__info {
+  float: left; }
+
+.event-tile-address {
+  padding-top: 0.5rem; }
+  .event-tile-address__title {
+    float: left;
+    font-weight: bold; }
+  .event-tile-address__info {
+    float: left;
+    padding-left: 0.8rem; }

@@ -33,6 +33,13 @@ export interface Event {
   createdAt: string;
   updatedAt?: string;
   deletedAt?: string;
+  address: {
+    city: string;
+    place: string;
+    street: string;
+    zipCode: number;
+    state: string;
+  };
 }
 
 export interface Filters {
