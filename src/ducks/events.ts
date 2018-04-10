@@ -14,7 +14,7 @@ const FETCH_EVENT_DETAIL_FAIL = 'FETCH_EVENT_DETAIL_FAIL';
 /**
  * Action creators
  */
-export const fetchEvents = (limit: number) => {
+export const fetchEvents = (limit?: number) => {
   return {
     type: FETCH_EVENTS,
     limit,
@@ -43,12 +43,19 @@ export interface Event {
   createdAt: string;
   updatedAt?: string;
   deletedAt?: string;
+  address: {
+    city: string;
+    place: string;
+    street: string;
+    zipCode: number;
+    state: string;
+  };
 }
 
 export interface Filters {
-  category: string | null;
-  date: string | null;
-  county: string | null;
+  category?: string;
+  date?: string;
+  county?: string;
 }
 
 export interface EventReducerModel {
@@ -133,9 +140,11 @@ export const eventDetailReducer = (
 /**
  * Sagas
  */
-function* fetchEventsSaga(action: { type: string; limit: number }) {
+function* fetchEventsSaga(action: { type: string; limit?: number }) {
   try {
-    const resp = yield call(axios.get, `http://localhost:3011/events?_limit=${action.limit}`);
+    const baseURL = 'http://localhost:3011/events';
+    const url = action.limit === undefined ? baseURL : `${baseURL}?_limit=${action.limit}`;
+    const resp = yield call(axios.get, url);
 
     yield put({
       type: FETCH_EVENTS_SUCCESS,
@@ -169,3 +178,14 @@ export default function* saga() {
   yield takeLatest(FETCH_EVENTS, fetchEventsSaga);
   yield takeLatest(FETCH_EVENT_DETAIL, fetchEventDetailSaga);
 }
+
+/**
+ * Selectors
+ */
+export const getUpcomingEvents = state => {
+  return state.events.data.slice(0, 3);
+};
+
+export const getSugestedEvents = state => {
+  return state.events.data.slice(4, 7);
+};
