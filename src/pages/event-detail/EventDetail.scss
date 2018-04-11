@@ -1,0 +1,54 @@
+@import '../../css/colors.scss';
+
+.event-detail {
+  max-width: 37%;
+  margin: auto;
+  margin-bottom: 2rem;
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
+  &__image {
+    width: 31.2rem;
+  }
+  &__border {
+    border: 1px solid $color-gray;
+    border-top: none;
+    border-top: none;
+    padding: 1rem;
+  }
+}
+
+.basic-info {
+  padding-bottom: 1rem;
+  &__start-date {
+    float: left;
+    padding-right: 4rem;
+  }
+  &__number-day {
+    color: red;
+    font-size: 1.125rem;
+  }
+  &__place-event {
+    float: left;
+  }
+  &__title-event {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+}
+
+.information {
+  padding-bottom: 2rem;
+  &__address {
+    padding-bottom: 2rem;
+  }
+  &__dark-text {
+    color: $color-dark-gray;
+  }
+  &__light-text {
+    color: $color-light-gray;
+  }
+}
+
+.description-title {
+  font-weight: bold;
+  padding-bottom: 1rem;
+}

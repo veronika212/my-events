@@ -1,0 +1,39 @@
+.event-detail {
+  max-width: 37%;
+  margin: auto;
+  margin-bottom: 2rem;
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75); }
+  .event-detail__image {
+    width: 31.2rem; }
+  .event-detail__border {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: none;
+    border-top: none;
+    padding: 1rem; }
+
+.basic-info {
+  padding-bottom: 1rem; }
+  .basic-info__start-date {
+    float: left;
+    padding-right: 4rem; }
+  .basic-info__number-day {
+    color: red;
+    font-size: 1.125rem; }
+  .basic-info__place-event {
+    float: left; }
+  .basic-info__title-event {
+    font-size: 1.125rem;
+    font-weight: 600; }
+
+.information {
+  padding-bottom: 2rem; }
+  .information__address {
+    padding-bottom: 2rem; }
+  .information__dark-text {
+    color: #4b4f56; }
+  .information__light-text {
+    color: #90949c; }
+
+.description-title {
+  font-weight: bold;
+  padding-bottom: 1rem; }

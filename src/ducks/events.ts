@@ -104,6 +104,13 @@ export interface EventDetailModel {
   createdAt: string;
   updatedAt?: string;
   deletedAt?: string;
+  address: {
+    city: string;
+    place: string;
+    street: string;
+    zipCode: number;
+    state: string;
+  };
 }
 
 const defaultEventDetailReducer = {
@@ -121,6 +128,13 @@ const defaultEventDetailReducer = {
   createdAt: '',
   updatedAt: null,
   deletedAt: null,
+  address: {
+    city: '',
+    place: '',
+    street: '',
+    zipCode: 0,
+    state: '',
+  },
 };
 
 export const eventDetailReducer = (
