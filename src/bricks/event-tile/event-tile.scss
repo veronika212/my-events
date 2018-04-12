@@ -27,6 +27,10 @@
   &__info {
     float: left;
   }
+  &__info-title {
+    font-weight: bold;
+    color: $color-black;
+  }
 }
 
 .event-tile-address {
