@@ -7,7 +7,7 @@ import './event-tile.css';
 const EventTile = props => {
   return (
     <div className="event-tile">
-      <Link to={`/book/${props.id}`}>
+      <Link to={`/event/${props.id}`}>
         <img className="event-tile__image" src={props.image} alt="pictures" />
       </Link>
 
@@ -19,7 +19,7 @@ const EventTile = props => {
           </div>
 
           <div className="event-tile-date__info">
-            <Link to={`/book/${props.id}`}>
+            <Link to={`/event/${props.id}`}>
               <p className="event-tile-date__info-title">{props.name}</p>
             </Link>
             <p>{props.county}</p>
