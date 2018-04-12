@@ -174,8 +174,11 @@ function* fetchEventsSaga(action: { type: string; limit?: number }) {
 
 function* fetchEventDetailSaga(action: { type: string; id: number }) {
   try {
-    const resp = yield call(axios.get, `http://localhost:3011/events/${action.id}`);
-
+    const resp = yield call(
+      axios.get,
+      `http://localhost:3011/events/${action.id}?_embed=comments&_expand=user`
+    );
+    console.log(resp);
     yield put({
       type: FETCH_EVENT_DETAIL_SUCCESS,
       payload: resp.data,
