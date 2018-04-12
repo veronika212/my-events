@@ -9,4 +9,5 @@
 .event-tiles-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 2rem 0 2rem; }
+  margin: 0 2rem 0 2rem;
+  justify-content: space-between; }

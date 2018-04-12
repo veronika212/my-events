@@ -1,5 +1,5 @@
 .event-tile {
-  width: 20%;
+  max-width: 20%;
   margin-top: 2rem;
   margin-right: 2rem;
   flex-grow: 1; }
@@ -20,6 +20,10 @@
 
 .event-tile-date__info {
   float: left; }
+
+.event-tile-date__info-title {
+  font-weight: bold;
+  color: black; }
 
 .event-tile-address {
   padding-top: 0.5rem; }
