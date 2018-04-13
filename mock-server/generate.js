@@ -104,6 +104,7 @@ module.exports = function() {
     users: _.times(45, function(index) {
       return {
         id: index,
+        image: faker.image.avatar(),
         county: county[Math.floor(Math.random() * county.length)],
         userName: faker.internet.userName(),
         city: faker.address.city(),

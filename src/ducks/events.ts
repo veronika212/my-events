@@ -111,6 +111,27 @@ export interface EventDetailModel {
     zipCode: number;
     state: string;
   };
+  user: {
+    id: number;
+    county: string;
+    userName: string;
+    city: string;
+    placeOfBirth: string;
+    job: string;
+    favourite: {
+      book: string;
+      song: string;
+      moto: string;
+      film: string;
+    };
+    going: number;
+    interested: number;
+    likes: number;
+    age: number;
+    createdAt: string;
+    updatedAt: string;
+    deletedAt: string;
+  };
 }
 
 const defaultEventDetailReducer = {
@@ -134,6 +155,27 @@ const defaultEventDetailReducer = {
     street: '',
     zipCode: 0,
     state: '',
+  },
+  user: {
+    id: 0,
+    county: '',
+    userName: '',
+    city: '',
+    placeOfBirth: '',
+    job: '',
+    favourite: {
+      book: '',
+      song: '',
+      moto: '',
+      film: '',
+    },
+    going: 0,
+    interested: 0,
+    likes: 0,
+    age: 0,
+    createdAt: '',
+    updatedAt: null,
+    deletedAt: null,
   },
 };
 
@@ -173,10 +215,11 @@ function* fetchEventsSaga(action: { type: string; limit?: number }) {
 }
 
 function* fetchEventDetailSaga(action: { type: string; id: number }) {
+  console.log('action', action);
   try {
     const resp = yield call(
       axios.get,
-      `http://localhost:3011/events/${action.id}?_embed=comments&_expand=user`
+      `http://localhost:3011/events/${action.id}/?_embed=comments&_expand=user`
     );
     console.log(resp);
     yield put({
