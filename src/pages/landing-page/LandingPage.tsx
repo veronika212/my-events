@@ -6,6 +6,7 @@ import { fetchEvents, Event } from '../../ducks/events';
 import UpcomingEvents from '../../bricks/upcoming-events/UpcomingEvents';
 import SuggestedEvents from '../../bricks/suggested-events/SuggestedEvents';
 import EventTile from '../../bricks/event-tile/EventTile';
+import { Loading } from '../../bricks';
 
 interface LandingPageProps {
   fetchEvents: (limit?: number) => { type: string; limit: number };
@@ -23,6 +24,7 @@ class LandingPage extends Component<LandingPageProps> {
       return (
         <EventTile
           key={singleEventTile.id}
+          id={singleEventTile.id}
           name={singleEventTile.name}
           image={singleEventTile.image}
           county={singleEventTile.county}
@@ -36,8 +38,8 @@ class LandingPage extends Component<LandingPageProps> {
   render() {
     const { events } = this.props;
 
-    if (!events) {
-      return <div>Loading...</div>;
+    if (events.length === 0) {
+      return <Loading />;
     }
 
     return (
