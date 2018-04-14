@@ -17,4 +17,7 @@
     padding-right: 1rem; }
   .user-tile-box__info {
     float: left;
+    max-width: 67%;
     color: #90949c; }
+  .user-tile-box__motto {
+    overflow-wrap: break-word; }

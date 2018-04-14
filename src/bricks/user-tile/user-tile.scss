@@ -22,6 +22,10 @@
   }
   &__info {
     float: left;
+    max-width: 67%;
     color: $color-light-gray;
+  }
+  &__motto {
+    overflow-wrap: break-word;
   }
 }

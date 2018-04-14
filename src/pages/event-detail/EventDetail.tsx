@@ -6,6 +6,7 @@ import { fetchEventDetail, EventDetailModel } from '../../ducks/events';
 import { Loading } from '../../bricks';
 import { Button } from '../../bricks';
 import UserTile from '../../bricks/user-tile/UserTile';
+import CommentsTile from '../../bricks/comments-tile/CommentsTile';
 import './EventDetail.css';
 
 interface EventDetailProps {
@@ -26,11 +27,22 @@ class EventDetail extends Component<EventDetailProps> {
     return <UserTile user={eventDetail.user} />;
   }
 
+  renderCommentsTile() {
+    const { eventDetail } = this.props;
+
+    return (
+      <ul>
+        {eventDetail.comments.map(comment => <CommentsTile key={comment.id} comments={comment} />)}
+      </ul>
+    );
+  }
+
   render() {
     const { eventDetail } = this.props;
     if (!eventDetail) {
       return <Loading />;
     }
+
     return (
       <div className="clearfix event-detail">
         <div className="user-tile">{this.renderUserTile()}</div>
@@ -94,15 +106,17 @@ class EventDetail extends Component<EventDetailProps> {
               </div>
               <hr />
             </div>
-
-            <div>
-              <p className="description-title">Description event </p>
-              <p>{eventDetail.description}</p>
-            </div>
           </div>
         </div>
 
         <div className="user-tile">{this.renderUserTile()}</div>
+
+        <div className="description-box">
+          <p className="description-box__title">Description event </p>
+          <p>{eventDetail.description}</p>
+        </div>
+
+        <div>{this.renderCommentsTile()}</div>
       </div>
     );
   }

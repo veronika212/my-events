@@ -3,13 +3,13 @@
 .event-detail {
   margin: 2rem;
   &__content {
-    max-width: 49%;
+    width: 43%;
     float: left;
     margin: 0 4rem;
     box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
   }
   &__image {
-    width: 37.8rem;
+    width: 38.6rem;
   }
   &__border {
     border: 1px solid $color-gray;
@@ -47,7 +47,13 @@
   }
 }
 
-.description-title {
-  font-weight: bold;
-  padding-bottom: 1rem;
+.description-box {
+  clear: both;
+  border: 1px solid $color-gray;
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
+  padding: 1rem;
+  &__title {
+    font-weight: bold;
+    padding-bottom: 1rem;
+  }
 }

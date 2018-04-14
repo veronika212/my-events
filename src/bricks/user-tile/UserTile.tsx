@@ -14,14 +14,14 @@ const UserTile = props => {
           <p>Name</p>
           <p>Job</p>
           <p>Age</p>
-          <p>Life Moto</p>
+          <p>Life Motto</p>
         </div>
 
         <div className="user-tile-box__info">
           <p>{props.user.userName}</p>
           <p>{props.user.job}</p>
           <p>{props.user.age}</p>
-          <q> {props.user.favourite.moto} </q>
+          <q className="user-tile-box__motto"> {props.user.favourite.motto} </q>
         </div>
       </div>
     </div>

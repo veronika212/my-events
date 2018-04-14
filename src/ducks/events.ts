@@ -89,6 +89,22 @@ export const eventsReducer = (state: EventReducerModel = defaultState, action: a
   }
 };
 
+type Comment = {
+  id: number;
+  eventId: number;
+  userId: number;
+  title: string;
+  text: string;
+  author: {
+    image: string;
+    firstName: string;
+    lastName: string;
+  };
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: string;
+};
+
 export interface EventDetailModel {
   id: number;
   name: string;
@@ -121,7 +137,7 @@ export interface EventDetailModel {
     favourite: {
       book: string;
       song: string;
-      moto: string;
+      motto: string;
       film: string;
     };
     going: number;
@@ -132,6 +148,7 @@ export interface EventDetailModel {
     updatedAt: string;
     deletedAt: string;
   };
+  comments: Comment[];
 }
 
 const defaultEventDetailReducer = {
@@ -166,7 +183,7 @@ const defaultEventDetailReducer = {
     favourite: {
       book: '',
       song: '',
-      moto: '',
+      motto: '',
       film: '',
     },
     going: 0,
@@ -177,6 +194,23 @@ const defaultEventDetailReducer = {
     updatedAt: null,
     deletedAt: null,
   },
+  comments: [
+    {
+      id: 0,
+      eventId: 0,
+      userId: 0,
+      title: '',
+      text: '',
+      author: {
+        image: '',
+        firstName: '',
+        lastName: '',
+      },
+      createdAt: '',
+      updatedAt: null,
+      deletedAt: null,
+    },
+  ],
 };
 
 export const eventDetailReducer = (
@@ -215,13 +249,11 @@ function* fetchEventsSaga(action: { type: string; limit?: number }) {
 }
 
 function* fetchEventDetailSaga(action: { type: string; id: number }) {
-  console.log('action', action);
   try {
     const resp = yield call(
       axios.get,
       `http://localhost:3011/events/${action.id}/?_embed=comments&_expand=user`
     );
-    console.log(resp);
     yield put({
       type: FETCH_EVENT_DETAIL_SUCCESS,
       payload: resp.data,

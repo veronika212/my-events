@@ -1,12 +1,12 @@
 .event-detail {
   margin: 2rem; }
   .event-detail__content {
-    max-width: 49%;
+    width: 43%;
     float: left;
     margin: 0 4rem;
     box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75); }
   .event-detail__image {
-    width: 37.8rem; }
+    width: 38.6rem; }
   .event-detail__border {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-top: none;
@@ -33,6 +33,11 @@
   .information__light-text {
     color: #90949c; }
 
-.description-title {
-  font-weight: bold;
-  padding-bottom: 1rem; }
+.description-box {
+  clear: both;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
+  padding: 1rem; }
+  .description-box__title {
+    font-weight: bold;
+    padding-bottom: 1rem; }
