@@ -21,6 +21,10 @@
 .event-tile-date__info {
   float: left; }
 
+.event-tile-date__info-title {
+  font-weight: bold;
+  color: black; }
+
 .event-tile-address {
   padding-top: 0.5rem; }
   .event-tile-address__title {

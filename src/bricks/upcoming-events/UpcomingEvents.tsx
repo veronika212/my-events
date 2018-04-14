@@ -28,7 +28,11 @@ class UpcomingEvents extends Component<UpcomingEventsProps> {
             </div>
 
             <div className="item-content__info">
-              <p className="item-content__info item-content__info_title">{singleEvent.name}</p>
+              <p>
+                <Link className="item-content__info-title" to={`/event/${singleEvent.id}`}>
+                  {singleEvent.name}
+                </Link>
+              </p>
               <p>{singleEvent.county}</p>
             </div>
           </div>

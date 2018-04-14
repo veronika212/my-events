@@ -62,9 +62,10 @@ module.exports = function() {
       const randomEventDaysLength = Math.floor(Math.random() * 7);
       return {
         id: index,
+        userId: index,
         name: faker.company.companyName(),
-        image: faker.image.avatar(),
-        description: faker.lorem.text(),
+        image: faker.image.image(),
+        description: faker.lorem.paragraphs(),
         address: {
           street: faker.address.streetAddress(),
           city: faker.address.city(),
@@ -86,6 +87,7 @@ module.exports = function() {
     }),
     comments: _.times(250, function(index) {
       return {
+        id: index,
         eventId: getRandomInt(1, 35),
         userId: getRandomInt(1, 45),
         title: faker.lorem.words(),
@@ -103,6 +105,7 @@ module.exports = function() {
     users: _.times(45, function(index) {
       return {
         id: index,
+        image: faker.image.avatar(),
         county: county[Math.floor(Math.random() * county.length)],
         userName: faker.internet.userName(),
         city: faker.address.city(),
@@ -111,7 +114,7 @@ module.exports = function() {
         favourite: {
           book: faker.lorem.words(),
           song: faker.lorem.words(),
-          moto: faker.lorem.words(),
+          motto: faker.lorem.words(),
           film: faker.lorem.words(),
         },
         going: getRandomIntegersArray(getRandomInt(0, 7), 35),

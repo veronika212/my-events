@@ -1,11 +1,15 @@
 import React from 'react';
 import format from 'date-fns/format';
+import { Link } from 'react-router-dom';
+
 import './event-tile.css';
 
 const EventTile = props => {
   return (
     <div className="event-tile">
-      <img className="event-tile__image" src={props.image} alt="pictures" />
+      <Link to={`/event/${props.id}`}>
+        <img className="event-tile__image" src={props.image} alt="pictures" />
+      </Link>
 
       <div className="event-tile__content">
         <div className="event-tile-date clearfix">
@@ -15,7 +19,9 @@ const EventTile = props => {
           </div>
 
           <div className="event-tile-date__info">
-            <p>{props.name}</p>
+            <Link to={`/event/${props.id}`}>
+              <p className="event-tile-date__info-title">{props.name}</p>
+            </Link>
             <p>{props.county}</p>
           </div>
         </div>

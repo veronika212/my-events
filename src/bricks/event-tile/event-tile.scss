@@ -10,7 +10,7 @@
   }
   &__content {
     padding: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid $color-gray;
     border-top: none;
   }
 }
@@ -26,6 +26,10 @@
   }
   &__info {
     float: left;
+  }
+  &__info-title {
+    font-weight: bold;
+    color: $color-black;
   }
 }
 

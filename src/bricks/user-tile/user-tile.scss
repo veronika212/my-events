@@ -1,0 +1,31 @@
+@import '../../css/colors.scss';
+
+.user-tile {
+  width: 24%;
+  float: left;
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
+  border: 1px solid $color-gray;
+  border-top: none;
+  &__image {
+    width: 21.5rem;
+  }
+}
+
+.user-tile-box {
+  padding: 1rem;
+  font-size: 1.125rem;
+  &__name {
+    float: left;
+    color: $color-dark-gray;
+    font-weight: bold;
+    padding-right: 1rem;
+  }
+  &__info {
+    float: left;
+    max-width: 67%;
+    color: $color-light-gray;
+  }
+  &__motto {
+    overflow-wrap: break-word;
+  }
+}

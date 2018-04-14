@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import format from 'date-fns/format';
+import { Link } from 'react-router-dom';
 
 import { Button } from '../../bricks';
 import { getSugestedEvents } from '../../ducks/events';
@@ -29,7 +30,11 @@ class SuggestedEvent extends Component<SuggestedEventProps> {
               </div>
 
               <div className="item-content__info">
-                <p className="item-content__ifno item-content__info_title">{singleEvent.name}</p>
+                <p>
+                  <Link className="item-content__info-title" to={`/event/${singleEvent.id}`}>
+                    {singleEvent.name}
+                  </Link>
+                </p>
                 <p>{singleEvent.county}</p>
               </div>
 
