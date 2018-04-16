@@ -1,0 +1,31 @@
+@import '../../css/colors.scss';
+
+.comments-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.comments-tile {
+  margin-bottom: 2rem;
+  &__image {
+    float: left;
+    margin-right: 2rem;
+    box-shadow: 1px 1px 8px 0px $color-shadow;
+  }
+  &__info {
+    float: left;
+    max-width: 88%;
+  }
+  &__info-author {
+    font-weight: bold;
+    padding-bottom: 1rem;
+  }
+  &__info-title {
+    color: $color-dark-gray;
+    padding-bottom: 0.5rem;
+  }
+  &__info-text {
+    color: $color-light-gray;
+  }
+}

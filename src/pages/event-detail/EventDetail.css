@@ -3,7 +3,7 @@
   .event-detail__content {
     width: 43%;
     float: left;
-    margin: 0 4rem;
+    margin: 0 4rem 2rem;
     box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75); }
   .event-detail__image {
     width: 38.6rem; }
@@ -34,10 +34,11 @@
     color: #90949c; }
 
 .description-box {
-  clear: both;
+  clear: left;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
-  padding: 1rem; }
+  padding: 1rem;
+  margin-bottom: 2rem; }
   .description-box__title {
     font-weight: bold;
     padding-bottom: 1rem; }

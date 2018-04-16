@@ -32,6 +32,7 @@ class EventDetail extends Component<EventDetailProps> {
 
     return (
       <ul>
+        <p className="comments-title">Comments</p>
         {eventDetail.comments.map(comment => <CommentsTile key={comment.id} comments={comment} />)}
       </ul>
     );
@@ -104,7 +105,6 @@ class EventDetail extends Component<EventDetailProps> {
                   eventDetail.address.city
                 } ${eventDetail.address.zipCode}, ${eventDetail.address.state}`}</p>
               </div>
-              <hr />
             </div>
           </div>
         </div>
