@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { call, put, takeLatest } from 'redux-saga/effects';
+
 /**
  * Action types
  */
@@ -8,7 +11,7 @@ const FETCH_USERS_FAIL = 'FETCH_USERS_FAIL';
 /**
  * Action creators
  */
-const fetchUsers = () => {
+export const fetchUsers = () => {
   return {
     type: FETCH_USERS,
   };
@@ -17,7 +20,7 @@ const fetchUsers = () => {
 /**
  * Models
  */
-type User = {
+export interface User {
   id: number;
   image: string;
   county: string;
@@ -38,7 +41,7 @@ type User = {
   createdAt: string;
   updatedAt?: string;
   deletedAt?: string;
-};
+}
 
 /**
  * Reducers
@@ -46,9 +49,9 @@ type User = {
 export const usersReducer = (state: User[] = [], action: any) => {
   switch (action.type) {
     case FETCH_USERS_SUCCESS:
-      return state;
+      return action.payload;
     case FETCH_USERS_FAIL:
-      return state;
+      return action.payload.data;
     default:
       return state;
   }
@@ -57,3 +60,22 @@ export const usersReducer = (state: User[] = [], action: any) => {
 /**
  * Sagas
  */
+function* fetchUsersSaga(action: { type: string }) {
+  try {
+    const resp = yield call(axios.get, 'http://localhost:3011/users');
+
+    yield put({
+      type: FETCH_USERS_SUCCESS,
+      payload: resp.data,
+    });
+  } catch (error) {
+    yield put({
+      type: FETCH_USERS_FAIL,
+      payload: [],
+    });
+  }
+}
+
+export default function* saga() {
+  yield takeLatest(FETCH_USERS, fetchUsersSaga);
+}
