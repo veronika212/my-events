@@ -34,14 +34,14 @@ const categories = [
   'Networking',
 ];
 const county = [
-  'Banska Bystrica',
-  'Bratislava',
-  'Nitra',
-  'Presov',
-  'Kosice',
-  'Trencin',
-  'Trnava',
-  'Zilina',
+  'Banskobystricky kraj',
+  'Bratislavy kraj',
+  'Nitriansky kraj',
+  'Presovsky kraj',
+  'Kosicky kraj',
+  'Trenciansky kraj',
+  'Trnavsky kraj',
+  'Zilinsky kraj',
 ];
 
 const places = [

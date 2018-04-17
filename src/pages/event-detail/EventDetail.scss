@@ -6,7 +6,7 @@
     width: 43%;
     float: left;
     margin: 0 4rem;
-    box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 1px 8px 0px $color-shadow;
   }
   &__image {
     width: 38.6rem;
@@ -25,7 +25,7 @@
     padding-right: 4rem;
   }
   &__number-day {
-    color: red;
+    color: $color-red;
     font-size: 1.125rem;
   }
   &__place-event {
@@ -50,7 +50,7 @@
 .description-box {
   clear: both;
   border: 1px solid $color-gray;
-  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 8px 0px $color-shadow;
   padding: 1rem;
   &__title {
     font-weight: bold;

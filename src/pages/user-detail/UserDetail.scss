@@ -1,0 +1,50 @@
+@import '../../css/colors.scss';
+
+.user-detail {
+  width: 40%;
+  font-size: 1.125rem;
+  margin: 2rem;
+  padding: 2rem;
+  box-shadow: 1px 1px 8px 0px $color-shadow;
+  &__image {
+    width: 16rem;
+    margin: 0 2rem 2rem 0;
+    float: left;
+    box-shadow: 1px 1px 8px 0px $color-shadow;
+  }
+  &__title {
+    font-weight: bold;
+    color: $color-dark-gray;
+  }
+  &__created-user {
+    color: $color-light-gray;
+    padding-top: 2rem;
+    font-size: 1rem;
+  }
+}
+
+.user-detail-basic-info {
+  float: left;
+  &__name {
+    font-weight: bold;
+    padding-bottom: 1rem;
+  }
+  &__title {
+    font-weight: bold;
+    color: $color-dark-gray;
+  }
+  &__btns {
+    padding-top: 1rem;
+  }
+  &__btn {
+    margin-right: 0.5rem;
+  }
+}
+
+.user-detail-specific-info {
+  clear: left;
+  &__title {
+    font-weight: bold;
+    color: $color-dark-gray;
+  }
+}
