@@ -6,7 +6,7 @@ import { fetchEventDetail, EventDetailModel } from '../../ducks/events';
 import { Loading } from '../../bricks';
 import { Button } from '../../bricks';
 import UserTile from '../../bricks/user-tile/UserTile';
-import CommentsTile from '../../bricks/comments-tile/CommentsTile';
+import CommentTile from '../../bricks/comment-tile/CommentTile';
 import './EventDetail.css';
 
 interface EventDetailProps {
@@ -31,10 +31,12 @@ class EventDetail extends Component<EventDetailProps> {
     const { eventDetail } = this.props;
 
     return (
-      <ul>
-        <p className="comments-title">Comments</p>
-        {eventDetail.comments.map(comment => <CommentsTile key={comment.id} comments={comment} />)}
-      </ul>
+      <div>
+        <h4 className="comments-title">Comments</h4>
+        <ul>
+          {eventDetail.comments.map(comment => <CommentTile key={comment.id} comments={comment} />)}
+        </ul>
+      </div>
     );
   }
 

@@ -8,7 +8,9 @@
 
 .comments-tile {
   margin-bottom: 2rem;
+  list-style: none;
   &__image {
+    border-radius: 50%;
     float: left;
     margin-right: 2rem;
     box-shadow: 1px 1px 8px 0px $color-shadow;
