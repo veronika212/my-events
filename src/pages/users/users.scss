@@ -1,0 +1,56 @@
+@import '../../css/colors.scss';
+
+.users {
+  margin: 2rem;
+  &__title {
+    text-align: center;
+    color: $color-darker-blue;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+  &__list {
+    list-style: none;
+  }
+}
+
+.user-item {
+  margin-bottom: 3rem;
+  &__image {
+    float: left;
+    margin-right: 2rem;
+    width: 15rem;
+    box-shadow: 1px 1px 8px 0px $color-shadow;
+  }
+  &__info {
+    float: left;
+    font-size: 1.17rem;
+  }
+  &__info-name {
+    font-weight: bold;
+    padding-bottom: 1rem;
+  }
+  &__info-name_link {
+    color: $color-black;
+    &:hover {
+      color: $color-black;
+    }
+  }
+}
+
+.information {
+  color: $color-darker-blue;
+  font-weight: bold;
+  &__create-date {
+    color: $color-light-gray;
+    padding-top: 4rem;
+  }
+  &__motto {
+    float: left;
+    padding: 2.7rem 0 0 4rem;
+    font-size: 1.17rem;
+  }
+  &__motto-content {
+    color: $color-dark-gray;
+    padding: 1rem 0 0 3rem;
+  }
+}
