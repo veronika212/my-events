@@ -19,6 +19,7 @@ ReactDOM.render(
       <App>
         <Switch>
           <Route exact={true} path="/" component={LandingPage} />
+          <Route exact={true} path="/event/create" component={() => <div>create</div>} />
           <Route exact={true} path="/event/:id" component={EventDetail} />
         </Switch>
       </App>
