@@ -8,7 +8,7 @@ import { store } from './store/store';
 import App from './App';
 import LandingPage from './pages/landing-page/LandingPage';
 import EventDetail from './pages/event-detail/EventDetail';
-
+import EventForm from './components/event-form/EventForm';
 import registerServiceWorker from './registerServiceWorker';
 
 export const history = createBrowserHistory();
@@ -19,7 +19,7 @@ ReactDOM.render(
       <App>
         <Switch>
           <Route exact={true} path="/" component={LandingPage} />
-          <Route exact={true} path="/event/create" component={() => <div>create</div>} />
+          <Route exact={true} path="/event/create" component={EventForm} />
           <Route exact={true} path="/event/:id" component={EventDetail} />
         </Switch>
       </App>
