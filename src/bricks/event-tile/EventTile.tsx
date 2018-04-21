@@ -6,12 +6,12 @@ import './event-tile.css';
 
 const EventTile = props => {
   return (
-    <div className="event-tile">
+    <div className={`event-tile ${props.className ? props.className : ''}`}>
       <Link to={`/event/${props.id}`}>
         <img className="event-tile__image" src={props.image} alt="pictures" />
       </Link>
 
-      <div className="event-tile__content">
+      <div className="event-tile__content event-tile_landscape__content">
         <div className="event-tile-date clearfix">
           <div className="event-tile-date__date-day">
             <p className="event-tile-date__date-title">{format(props.startDate, 'DD MMM')}</p>

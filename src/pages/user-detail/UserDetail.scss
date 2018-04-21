@@ -6,6 +6,7 @@
   margin: 2rem;
   padding: 2rem;
   box-shadow: 1px 1px 8px 0px $color-shadow;
+  float: left;
   &__image {
     width: 16rem;
     margin: 0 2rem 2rem 0;
@@ -16,7 +17,15 @@
     font-weight: bold;
     color: $color-dark-gray;
   }
-  &__created-user {
+  &__title-motto {
+    padding: 1rem 0 0.5rem 0;
+  }
+  &__motto {
+    padding-bottom: 1rem;
+    color: $color-light-gray;
+  }
+  &__created-at {
+    clear: left;
     color: $color-light-gray;
     padding-top: 2rem;
     font-size: 1rem;
@@ -41,10 +50,33 @@
   }
 }
 
+.user-detail-specific-info,
+.user-detail__motto-wrapper {
+  float: left;
+}
+
 .user-detail-specific-info {
+  max-width: 60%;
+  padding-right: 1rem;
   clear: left;
   &__title {
     font-weight: bold;
     color: $color-dark-gray;
   }
+}
+
+.user-detail__motto-wrapper {
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 40%;
+  height: 6rem;
+  padding-top: 1rem;
+}
+
+.user-detail-events {
+  float: left;
+}
+
+.user-detail-comments {
+  clear: left;
 }

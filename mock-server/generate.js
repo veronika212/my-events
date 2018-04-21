@@ -62,7 +62,7 @@ module.exports = function() {
       const randomEventDaysLength = Math.floor(Math.random() * 7);
       return {
         id: index,
-        userId: index,
+        userId: getRandomInt(0, 44),
         name: faker.company.companyName(),
         image: faker.image.image(),
         description: faker.lorem.paragraphs(),

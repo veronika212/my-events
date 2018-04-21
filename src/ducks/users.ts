@@ -47,6 +47,46 @@ export interface User {
   deletedAt?: string;
 }
 
+type Comment = {
+  id: number;
+  eventId: number;
+  userId: number;
+  title: string;
+  text: string;
+  author: {
+    image: string;
+    firstName: string;
+    lastName: string;
+  };
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: string;
+};
+
+type Event = {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
+  going?: number;
+  likes?: number;
+  interested?: number;
+  category: string;
+  county: string;
+  startDate: string;
+  endDate: string;
+  createdAt: string;
+  updatedAt?: string;
+  deletedAt?: string;
+  address: {
+    city: string;
+    place: string;
+    street: string;
+    zipCode: number;
+    state: string;
+  };
+};
+
 export interface UserDetailModel {
   id: number;
   image: string;
@@ -68,6 +108,8 @@ export interface UserDetailModel {
   createdAt: string;
   updatedAt?: string;
   deletedAt?: string;
+  comments: Comment[];
+  events: Event[];
 }
 
 /**
@@ -105,6 +147,48 @@ const defaultUserDetailReducer = {
   createdAt: '',
   updatedAt: null,
   deletedAt: null,
+  comments: [
+    {
+      id: 0,
+      eventId: 0,
+      userId: 0,
+      title: '',
+      text: '',
+      author: {
+        image: '',
+        firstName: '',
+        lastName: '',
+      },
+      createdAt: '',
+      updatedAt: null,
+      deletedAt: null,
+    },
+  ],
+  events: [
+    {
+      id: 0,
+      name: '',
+      image: '',
+      description: '',
+      going: 0,
+      likes: 0,
+      interested: 0,
+      category: '',
+      county: '',
+      startDate: '',
+      endDate: '',
+      createdAt: '',
+      updatedAt: null,
+      deletedAt: null,
+      address: {
+        city: '',
+        place: '',
+        street: '',
+        zipCode: 0,
+        state: '',
+      },
+    },
+  ],
 };
 
 export const userDetailReducer = (
@@ -142,7 +226,10 @@ function* fetchUsersSaga(action: { type: string }) {
 
 function* fetchUserDetailSaga(action: { type: string; id: number }) {
   try {
-    const resp = yield call(axios.get, `http://localhost:3011/users/${action.id}`);
+    const resp = yield call(
+      axios.get,
+      `http://localhost:3011/users/${action.id}?_embed=events&_embed=comments`
+    );
 
     yield put({
       type: FETCH_USER_DETAIL_SUCCES,
