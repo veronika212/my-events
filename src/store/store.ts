@@ -5,13 +5,13 @@ import { reducer as formReducer } from 'redux-form';
 
 import rootSaga from './rootSaga';
 import { eventsReducer, eventDetailReducer } from '../ducks/events';
-import { usersReducer } from '../ducks/users';
+import { usersReducer, userDetailReducer } from '../ducks/users';
 
 const rootReducer = combineReducers({
   events: eventsReducer,
   eventDetail: eventDetailReducer,
   users: usersReducer,
-  // userDetail: userDetailReducer,
+  userDetail: userDetailReducer,
   form: formReducer,
 });
 

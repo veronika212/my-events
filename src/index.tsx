@@ -11,6 +11,7 @@ import EventDetail from './pages/event-detail/EventDetail';
 import EventForm from './components/event-form/EventForm';
 import registerServiceWorker from './registerServiceWorker';
 import Users from './pages/users/Users';
+import UserDetail from './pages/user-detail/UserDetail';
 
 export const history = createBrowserHistory();
 
@@ -23,6 +24,7 @@ ReactDOM.render(
           <Route exact={true} path="/event/create" component={EventForm} />
           <Route exact={true} path="/event/:id" component={EventDetail} />
           <Route exact={true} path="/users" component={Users} />
+          <Route exact={true} path="/user/:id" component={UserDetail} />
         </Switch>
       </App>
     </Router>

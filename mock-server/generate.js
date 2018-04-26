@@ -34,14 +34,14 @@ const categories = [
   'Networking',
 ];
 const county = [
-  'Banska Bystrica',
-  'Bratislava',
-  'Nitra',
-  'Presov',
-  'Kosice',
-  'Trencin',
-  'Trnava',
-  'Zilina',
+  'Banskobystricky kraj',
+  'Bratislavy kraj',
+  'Nitriansky kraj',
+  'Presovsky kraj',
+  'Kosicky kraj',
+  'Trenciansky kraj',
+  'Trnavsky kraj',
+  'Zilinsky kraj',
 ];
 
 const places = [
@@ -62,7 +62,7 @@ module.exports = function() {
       const randomEventDaysLength = Math.floor(Math.random() * 7);
       return {
         id: index,
-        userId: index,
+        userId: getRandomInt(0, 44),
         name: faker.company.companyName(),
         image: faker.image.image(),
         description: faker.lorem.paragraphs(),

@@ -1,0 +1,63 @@
+.user-detail {
+  width: 40%;
+  font-size: 1.125rem;
+  margin: 2rem;
+  padding: 2rem;
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
+  float: left; }
+  .user-detail__image {
+    width: 16rem;
+    margin: 0 2rem 2rem 0;
+    float: left;
+    box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75); }
+  .user-detail__title {
+    font-weight: bold;
+    color: #4b4f56; }
+  .user-detail__title-motto {
+    padding: 1rem 0 0.5rem 0; }
+  .user-detail__motto {
+    padding-bottom: 1rem;
+    color: #90949c; }
+  .user-detail__created-at {
+    clear: left;
+    color: #90949c;
+    padding-top: 2rem;
+    font-size: 1rem; }
+
+.user-detail-basic-info {
+  float: left; }
+  .user-detail-basic-info__name {
+    font-weight: bold;
+    padding-bottom: 1rem; }
+  .user-detail-basic-info__title {
+    font-weight: bold;
+    color: #4b4f56; }
+  .user-detail-basic-info__btns {
+    padding-top: 1rem; }
+  .user-detail-basic-info__btn {
+    margin-right: 0.5rem; }
+
+.user-detail-specific-info,
+.user-detail__motto-wrapper {
+  float: left; }
+
+.user-detail-specific-info {
+  max-width: 60%;
+  padding-right: 1rem;
+  clear: left; }
+  .user-detail-specific-info__title {
+    font-weight: bold;
+    color: #4b4f56; }
+
+.user-detail__motto-wrapper {
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 40%;
+  height: 6rem;
+  padding-top: 1rem; }
+
+.user-detail-events {
+  float: left; }
+
+.user-detail-comments {
+  clear: left; }

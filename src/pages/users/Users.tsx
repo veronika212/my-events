@@ -22,7 +22,7 @@ class Users extends Component<UsersProps> {
       return (
         <li className="clearfix user-item" key={singleUser.id}>
           <Link to={`/user/${singleUser.id}`}>
-            <img className="user-item__image" src={singleUser.image} alt="avatar" />
+            <img className="user-item__image" src={singleUser.image} alt="user-avatar" />
           </Link>
 
           <div className="user-item__info">

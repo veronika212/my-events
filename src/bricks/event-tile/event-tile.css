@@ -33,3 +33,12 @@
   .event-tile-address__info {
     float: left;
     padding-left: 0.8rem; }
+
+.event-tile_landscape {
+  max-width: 100%; }
+  .event-tile_landscape__image {
+    width: 100%;
+    float: left; }
+  .event-tile_landscape__content {
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1); }
