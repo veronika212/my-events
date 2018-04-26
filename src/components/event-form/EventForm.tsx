@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Field, reduxForm, InjectedFormProps } from 'redux-form';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import './event-form.css';
+import { createEvent } from '../../ducks/events';
+import { required, isNumber } from '../../helpers/FormHelpers';
 
 interface EventFormData extends InjectedFormProps {
   userName?: string;
-  eventName?: string;
+  name?: string;
   email?: string;
   county?: string;
   address: {
@@ -20,6 +23,7 @@ interface EventFormData extends InjectedFormProps {
   startDate: string;
   endDate: string;
   description: string;
+  createEvent: any;
 }
 
 const selectOptions = [
@@ -108,27 +112,32 @@ const selectOptionsCounty = [
   },
 ];
 
-class EventForm extends Component<EventFormData> {
+class EventFormPresenter extends Component<EventFormData> {
   onSubmit = values => {
-    console.log(values);
+    this.props.createEvent(values);
   };
 
   renderInput = field => {
+    const {
+      meta: { touched, error },
+    } = field;
+    const className = `form-group ${touched && error ? 'has-danger' : ''}`;
     return (
-      <div>
+      <div className={className}>
         <input
           {...field.input}
           className="form-control"
           type="text"
           placeholder={field.placeholder}
         />
+        <div className="input-error">{touched ? error : ''}</div>
       </div>
     );
   };
 
   renderSelect = (name, options) => {
     return (
-      <Field className="form-control" name={name} component="select">
+      <Field className="form-control" name={name} component="select" validate={[required]}>
         {options.map(option => (
           <option key={option.value} value={option.value}>
             {option.label}
@@ -138,16 +147,23 @@ class EventForm extends Component<EventFormData> {
     );
   };
 
-  renderTextarea = field => (
-    <div>
-      <textarea
-        className="form-control"
-        {...field.input}
-        placeholder={field.placeholder}
-        rows="10"
-      />
-    </div>
-  );
+  renderTextarea = field => {
+    const {
+      meta: { touched, error },
+    } = field;
+    const className = `form-group ${touched && error ? 'has-danger' : ''}`;
+    return (
+      <div className={className}>
+        <textarea
+          className="form-control"
+          {...field.input}
+          placeholder={field.placeholder}
+          rows="10"
+        />
+        <div className="input-error">{touched ? error : ''}</div>
+      </div>
+    );
+  };
 
   render() {
     const { handleSubmit } = this.props;
@@ -155,38 +171,73 @@ class EventForm extends Component<EventFormData> {
     return (
       <form className="event-form" onSubmit={handleSubmit(this.onSubmit)}>
         <h4 className="event-form__title">Form of event</h4>
-        <div className="clearfix">
+        <div className="form-items-wrapper clearfix">
           <div className="event-form__item event-form__float">
-            <Field name="userName" component={this.renderInput} placeholder="Name of user" />
+            <Field
+              name="userName"
+              component={this.renderInput}
+              placeholder="Name of user"
+              validate={[required]}
+            />
           </div>
 
           <div className="event-form__item event-form__float">
-            <Field name="eventName" component={this.renderInput} placeholder="Name of event" />
+            <Field
+              name="name"
+              component={this.renderInput}
+              placeholder="Name of event"
+              validate={[required]}
+            />
           </div>
         </div>
 
         <div className="clearfix">
           <div className="event-form__item event-form__float">
-            <Field name="address.street" component={this.renderInput} placeholder="Street" />
+            <Field
+              name="address.street"
+              component={this.renderInput}
+              placeholder="Street"
+              validate={[required]}
+            />
           </div>
 
           <div className="event-form__item event-form__float">
-            <Field name="address.city" component={this.renderInput} placeholder="City" />
+            <Field
+              name="address.city"
+              component={this.renderInput}
+              placeholder="City"
+              validate={[required]}
+            />
           </div>
         </div>
 
         <div className="clearfix">
           <div className="event-form__item event-form__float">
-            <Field name="address.zipCode" component={this.renderInput} placeholder="zipCode" />
+            <Field
+              name="address.zipCode"
+              component={this.renderInput}
+              placeholder="zipCode"
+              validate={[required, isNumber]}
+            />
           </div>
 
           <div className="event-form__item event-form__float">
-            <Field name="address.state" component={this.renderInput} placeholder="State" />
+            <Field
+              name="address.state"
+              component={this.renderInput}
+              placeholder="State"
+              validate={[required]}
+            />
           </div>
         </div>
 
         <div className="event-form__center">
-          <Field name="address.place" component={this.renderInput} placeholder="Place of event" />
+          <Field
+            name="address.place"
+            component={this.renderInput}
+            placeholder="Place of event"
+            validate={[required]}
+          />
         </div>
 
         <div className="clearfix">
@@ -195,11 +246,17 @@ class EventForm extends Component<EventFormData> {
               name="startDate"
               component={this.renderInput}
               placeholder="Start date of event"
+              validate={[required]}
             />
           </div>
 
           <div className="event-form__item event-form__float">
-            <Field name="endDate" component={this.renderInput} placeholder="End date of event" />
+            <Field
+              name="endDate"
+              component={this.renderInput}
+              placeholder="End date of event"
+              validate={[required]}
+            />
           </div>
         </div>
 
@@ -217,6 +274,7 @@ class EventForm extends Component<EventFormData> {
             name="description"
             component={this.renderTextarea}
             placeholder="Description of event"
+            validate={[required]}
           />
         </div>
 
@@ -232,6 +290,8 @@ class EventForm extends Component<EventFormData> {
     );
   }
 }
+
+const EventForm = connect(null, { createEvent })(EventFormPresenter);
 
 export default reduxForm({
   form: 'eventForm',
