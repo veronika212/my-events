@@ -7,9 +7,14 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 const FETCH_EVENTS = 'FETCH_EVENTS';
 const FETCH_EVENTS_SUCCESS = 'FETCH_EVENTS_SUCCESS';
 const FETCH_EVENTS_FAIL = 'FETCH_EVENTS_FAIL';
+
 const FETCH_EVENT_DETAIL = 'FETCH_EVENT_DETAIL';
 const FETCH_EVENT_DETAIL_SUCCESS = 'FETCH_EVENT_DETAIL_SUCCESS';
 const FETCH_EVENT_DETAIL_FAIL = 'FETCH_EVENT_DETAIL_FAIL';
+
+const CREATE_EVENT = 'CREATE_EVENT';
+const CREATE_EVENT_SUCCESS = 'CREATE_EVENT_SUCCESS';
+const CREATE_EVENT_FAIL = 'CREATE_EVENT_FAIL';
 
 /**
  * Action creators
@@ -25,6 +30,13 @@ export const fetchEventDetail = (id: number) => {
   return {
     type: FETCH_EVENT_DETAIL,
     id,
+  };
+};
+
+export const createEvent = (data: any) => {
+  return {
+    type: CREATE_EVENT,
+    payload: data,
   };
 };
 
@@ -266,9 +278,40 @@ function* fetchEventDetailSaga(action: { type: string; id: number }) {
   }
 }
 
+function* doCreateEvent({ type, payload }: { type: string; payload: any }) {
+  console.log(payload, 'payload');
+  payload.userId = 24;
+  payload.image = 'http://lorempixel.com/640/480/people';
+
+  payload.going = 0;
+  payload.likes = 0;
+  payload.interested = 0;
+
+  payload.startDate = '2018-04-25T21:18:49.067+02:00';
+  payload.endDate = '2018-04-28T21:18:49.068+02:00';
+  payload.createdAt = '2018-04-15T21:18:49.068+02:00';
+  payload.updatedAt = null;
+  payload.deletedAt = null;
+
+  const resp = yield call(axios.post, `http://localhost:3011/events/`, payload);
+  console.log(resp);
+  if (resp.status !== 201) {
+    return yield put({
+      type: CREATE_EVENT_FAIL,
+      payload: [],
+    });
+  }
+
+  yield put({
+    type: CREATE_EVENT_SUCCESS,
+    payload,
+  });
+}
+
 export default function* saga() {
   yield takeLatest(FETCH_EVENTS, fetchEventsSaga);
   yield takeLatest(FETCH_EVENT_DETAIL, fetchEventDetailSaga);
+  yield takeLatest(CREATE_EVENT, doCreateEvent);
 }
 
 /**

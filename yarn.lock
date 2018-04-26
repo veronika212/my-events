@@ -77,9 +77,9 @@
   version "16.0.40"
   resolved "https://registry.npmjs.org/@types/react/-/react-16.0.40.tgz#caabc2296886f40b67f6fc80f0f3464476461df9"
 
-"@types/redux-form@^7.2.2":
-  version "7.2.2"
-  resolved "https://registry.npmjs.org/@types/redux-form/-/redux-form-7.2.2.tgz#8afe23ff0d21370f0921e3d942df5e889bd22866"
+"@types/redux-form@^7.2.3":
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/@types/redux-form/-/redux-form-7.2.3.tgz#1a42ed5c194f0c1b1a3fce21330682a4e03a7638"
   dependencies:
     "@types/react" "*"
     redux "^3.6.0"
