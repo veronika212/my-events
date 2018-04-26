@@ -10,6 +10,7 @@ import LandingPage from './pages/landing-page/LandingPage';
 import EventDetail from './pages/event-detail/EventDetail';
 import EventForm from './components/event-form/EventForm';
 import registerServiceWorker from './registerServiceWorker';
+import Users from './pages/users/Users';
 
 export const history = createBrowserHistory();
 
@@ -21,6 +22,7 @@ ReactDOM.render(
           <Route exact={true} path="/" component={LandingPage} />
           <Route exact={true} path="/event/create" component={EventForm} />
           <Route exact={true} path="/event/:id" component={EventDetail} />
+          <Route exact={true} path="/users" component={Users} />
         </Switch>
       </App>
     </Router>

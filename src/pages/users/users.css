@@ -1,0 +1,41 @@
+.users {
+  margin: 2rem; }
+  .users__title {
+    text-align: center;
+    color: #192c47;
+    margin-bottom: 2rem;
+    font-weight: 600; }
+  .users__list {
+    list-style: none; }
+
+.user-item {
+  margin-bottom: 3rem; }
+  .user-item__image {
+    float: left;
+    margin-right: 2rem;
+    width: 15rem;
+    box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75); }
+  .user-item__info {
+    float: left;
+    font-size: 1.17rem; }
+  .user-item__info-name {
+    font-weight: bold;
+    padding-bottom: 1rem; }
+  .user-item__info-name_link {
+    color: black; }
+    .user-item__info-name_link:hover {
+      color: black; }
+
+.information {
+  color: #192c47;
+  font-weight: bold; }
+  .information__create-date {
+    color: #90949c;
+    padding-top: 4rem; }
+  .information__motto {
+    float: left;
+    padding: 2.7rem 0 0 4rem;
+    font-size: 1.17rem; }
+  .information__motto-content {
+    color: #4b4f56;
+    padding: 1rem 0 0 3rem; }
