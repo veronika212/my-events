@@ -27,7 +27,8 @@
     "redux": "^3.7.2",
     "redux-form": "^7.3.0",
     "redux-logger": "^3.0.6",
-    "redux-saga": "^0.16.0"
+    "redux-saga": "^0.16.0",
+    "uuid": "^3.2.1"
   },
   "scripts": {
     "start": "concurrently --kill-others \"yarn react-scripts-ts start\" \"yarn watch-css\" \"yarn start-server\"",

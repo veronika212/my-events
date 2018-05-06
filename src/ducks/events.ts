@@ -96,6 +96,11 @@ export const eventsReducer = (state: EventReducerModel = defaultState, action: a
       };
     case FETCH_EVENTS_FAIL:
       return action.payload.data;
+    case CREATE_EVENT_SUCCESS:
+      return {
+        ...state,
+        data: [...state.data, action.payload],
+      };
     default:
       return state;
   }
@@ -281,7 +286,7 @@ function* fetchEventDetailSaga(action: { type: string; id: number }) {
 function* doCreateEvent({ type, payload }: { type: string; payload: any }) {
   console.log(payload, 'payload');
   payload.userId = 24;
-  payload.image = 'http://lorempixel.com/640/480/people';
+  payload.image = 'http://lorempixel.com/35/35/people';
 
   payload.going = 0;
   payload.likes = 0;

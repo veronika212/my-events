@@ -1,5 +1,6 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css';
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import './css/colors.scss';
 
 // GLOBAL STYLES
 
@@ -22,4 +23,17 @@ ul {
 
 body {
   max-width: 1500px;
+}
+
+.form-control {
+  border: none;
+}
+
+.input-error {
+  color: $color-red;
+  margin-top: 7px;
+}
+
+.form-group {
+  margin-bottom: 0;
 }

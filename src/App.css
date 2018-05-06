@@ -15,3 +15,13 @@ ul {
 
 body {
   max-width: 1500px; }
+
+.form-control {
+  border: none; }
+
+.input-error {
+  color: red;
+  margin-top: 7px; }
+
+.form-group {
+  margin-bottom: 0; }

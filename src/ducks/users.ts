@@ -1,15 +1,22 @@
 import axios from 'axios';
 import { call, put, takeLatest } from 'redux-saga/effects';
 
+import { history } from '../index';
+
 /**
  * Action types
  */
 const FETCH_USERS = 'FETCH_USERS';
 const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS';
 const FETCH_USERS_FAIL = 'FETCH_USERS_FAIL';
+
 const FETCH_USER_DETAIL = 'FETCH_USER_DETAIL';
-const FETCH_USER_DETAIL_SUCCES = 'FETCH_USER_DETAIL_SUCCES';
+const FETCH_USER_DETAIL_SUCCESS = 'FETCH_USER_DETAIL_SUCCESS';
 const FETCH_USER_DETAIL_FAIL = 'FETCH_USER_DETAIL_FAIL';
+
+const CREATE_USER = 'CREATE_USER';
+const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
+const CREATE_USER_FAIL = 'CREATE_USER_FAIL';
 
 /**
  * Action creators
@@ -24,6 +31,14 @@ export const fetchUserDetail = (id: number) => {
   return {
     type: FETCH_USER_DETAIL,
     id,
+  };
+};
+
+export const createUser = (data: any, callback) => {
+  return {
+    type: CREATE_USER,
+    payload: data,
+    callback: callback,
   };
 };
 
@@ -121,6 +136,8 @@ export const usersReducer = (state: User[] = [], action: any) => {
       return action.payload;
     case FETCH_USERS_FAIL:
       return action.payload.data;
+    case CREATE_USER_SUCCESS:
+      return [...state, action.payload];
     default:
       return state;
   }
@@ -196,7 +213,7 @@ export const userDetailReducer = (
   action: any
 ) => {
   switch (action.type) {
-    case FETCH_USER_DETAIL_SUCCES:
+    case FETCH_USER_DETAIL_SUCCESS:
       return action.payload;
     case FETCH_USER_DETAIL_FAIL:
       return action.payload.data;
@@ -232,7 +249,7 @@ function* fetchUserDetailSaga(action: { type: string; id: number }) {
     );
 
     yield put({
-      type: FETCH_USER_DETAIL_SUCCES,
+      type: FETCH_USER_DETAIL_SUCCESS,
       payload: resp.data,
     });
   } catch (error) {
@@ -243,7 +260,36 @@ function* fetchUserDetailSaga(action: { type: string; id: number }) {
   }
 }
 
+function* doCreateUserSaga(action: any) {
+  action.payload.image = 'http://lorempixel.com/35/35/people';
+
+  action.payload.going = 0;
+  action.payload.likes = 0;
+  action.payload.interested = 0;
+
+  action.payload.createdAt = '2018-04-15T21:18:49.068+02:00';
+  action.payload.updatedAt = null;
+  action.payload.deletedAt = null;
+
+  console.log(action.payload);
+  const resp = yield call(axios.post, `http://localhost:3011/users/`, action.payload);
+  console.log(resp);
+  if (resp.status !== 201) {
+    return yield put({
+      type: CREATE_USER_FAIL,
+      payload: [],
+    });
+  }
+  yield put({
+    type: CREATE_USER_SUCCESS,
+    payload: resp.data,
+  });
+
+  history.push('/users');
+}
+
 export default function* saga() {
   yield takeLatest(FETCH_USERS, fetchUsersSaga);
   yield takeLatest(FETCH_USER_DETAIL, fetchUserDetailSaga);
+  yield takeLatest(CREATE_USER, doCreateUserSaga);
 }
