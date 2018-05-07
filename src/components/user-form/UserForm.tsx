@@ -104,110 +104,114 @@ class UserFormPresenter extends Component<UserFormData> {
     const { handleSubmit } = this.props;
 
     return (
-      <form className="user-form" onSubmit={handleSubmit(this.onSubmit)}>
-        <h4 className="user-form__title">Form of user</h4>
-        <div className="clearfix">
-          <div className="user-form__item">
-            <Field
-              name="userName"
-              component={this.renderInput}
-              placeholder="Name of user"
-              validate={[required]}
-            />
+      <div className="container-fluid">
+        <form className="user-form" onSubmit={handleSubmit(this.onSubmit)}>
+          <h4 className="user-form__title">Form of user</h4>
+          <div className="row clearfix">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 user-form__item">
+              <Field
+                name="userName"
+                component={this.renderInput}
+                placeholder="Name of user"
+                validate={[required]}
+              />
+            </div>
+
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6  user-form__item">
+              <Field
+                name="job"
+                component={this.renderInput}
+                placeholder="Job"
+                validate={[required]}
+              />
+            </div>
           </div>
 
-          <div className="user-form__item">
-            <Field
-              name="job"
-              component={this.renderInput}
-              placeholder="Job"
-              validate={[required]}
-            />
-          </div>
-        </div>
+          <div className="row clearfix">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 user-form__item">
+              {this.renderSelect('caunty', selectOptionsCounty)}
+            </div>
 
-        <div className="clearfix">
-          <div className="user-form__item">{this.renderSelect('caunty', selectOptionsCounty)}</div>
-
-          <div className="user-form__item">
-            <Field
-              name="city"
-              component={this.renderInput}
-              placeholder="City"
-              validate={[required]}
-            />
-          </div>
-        </div>
-
-        <div className="clearfix">
-          <div className="user-form__item">
-            <Field
-              name="placeOfBirth"
-              component={this.renderInput}
-              placeholder="Place of birth"
-              validate={[required]}
-            />
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6  user-form__item">
+              <Field
+                name="city"
+                component={this.renderInput}
+                placeholder="City"
+                validate={[required]}
+              />
+            </div>
           </div>
 
-          <div className="user-form__item">
-            <Field
-              name="age"
-              component={this.renderInput}
-              placeholder="Age"
-              validate={[required, isNumber]}
-            />
-          </div>
-        </div>
+          <div className="row clearfix">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6  user-form__item">
+              <Field
+                name="placeOfBirth"
+                component={this.renderInput}
+                placeholder="Place of birth"
+                validate={[required]}
+              />
+            </div>
 
-        <div className="clearfix">
-          <div className="user-form__item">
-            <Field
-              name="favourite.book"
-              component={this.renderInput}
-              placeholder="Favourite book"
-              validate={[required]}
-            />
-          </div>
-
-          <div className="user-form__item">
-            <Field
-              name="favourite.film"
-              component={this.renderInput}
-              placeholder="Favourite film"
-              validate={[required]}
-            />
-          </div>
-        </div>
-
-        <div className="clearfix">
-          <div className="user-form__item">
-            <Field
-              name="favourite.song"
-              component={this.renderInput}
-              placeholder="Favourite song"
-              validate={[required]}
-            />
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 user-form__item">
+              <Field
+                name="age"
+                component={this.renderInput}
+                placeholder="Age"
+                validate={[required, isNumber]}
+              />
+            </div>
           </div>
 
-          <div className="user-form__item">
-            <Field
-              name="favourite.motto"
-              component={this.renderInput}
-              placeholder="Favourite life motto"
-              validate={[required]}
-            />
-          </div>
-        </div>
+          <div className="row clearfix">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6  user-form__item">
+              <Field
+                name="favourite.book"
+                component={this.renderInput}
+                placeholder="Favourite book"
+                validate={[required]}
+              />
+            </div>
 
-        <div className="user-form-button">
-          <button type="submit" className="btn btn-primary user-form-button__left-btn">
-            Submit
-          </button>
-          <Link to="/" className="btn btn-danger">
-            Cancel
-          </Link>
-        </div>
-      </form>
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 user-form__item">
+              <Field
+                name="favourite.film"
+                component={this.renderInput}
+                placeholder="Favourite film"
+                validate={[required]}
+              />
+            </div>
+          </div>
+
+          <div className="row clearfix">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 -md-6 user-form__item">
+              <Field
+                name="favourite.song"
+                component={this.renderInput}
+                placeholder="Favourite song"
+                validate={[required]}
+              />
+            </div>
+
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6  user-form__item">
+              <Field
+                name="favourite.motto"
+                component={this.renderInput}
+                placeholder="Favourite life motto"
+                validate={[required]}
+              />
+            </div>
+          </div>
+
+          <div className="user-form-button">
+            <button type="submit" className="btn btn-primary user-form-button__left-btn">
+              Submit
+            </button>
+            <Link to="/" className="btn btn-danger">
+              Cancel
+            </Link>
+          </div>
+        </form>
+      </div>
     );
   }
 }
