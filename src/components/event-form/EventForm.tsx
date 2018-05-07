@@ -169,124 +169,126 @@ class EventFormPresenter extends Component<EventFormData> {
     const { handleSubmit } = this.props;
 
     return (
-      <form className="event-form" onSubmit={handleSubmit(this.onSubmit)}>
-        <h4 className="event-form__title">Form of event</h4>
-        <div className="form-items-wrapper clearfix">
-          <div className="event-form__item event-form__float">
+      <div className="container-fluid">
+        <form className="event-form" onSubmit={handleSubmit(this.onSubmit)}>
+          <h4 className="event-form__title">Form of event</h4>
+          <div className="row clearfix">
+            <div className="col-xs-12 col-sml-12 col-md-12 col-lg-6 event-form__item event-form__float">
+              <Field
+                name="userName"
+                component={this.renderInput}
+                placeholder="Name of user"
+                validate={[required]}
+              />
+            </div>
+
+            <div className="col-xs-12 col-sml-12 col-md-12 col-lg-6 event-form__item event-form__float">
+              <Field
+                name="name"
+                component={this.renderInput}
+                placeholder="Name of event"
+                validate={[required]}
+              />
+            </div>
+          </div>
+
+          <div className="row clearfix">
+            <div className="col-xs-12 col-sml-12 col-md-12 col-lg-6 event-form__item event-form__float">
+              <Field
+                name="address.street"
+                component={this.renderInput}
+                placeholder="Street"
+                validate={[required]}
+              />
+            </div>
+
+            <div className="col-xs-12 col-sml-12 col-md-12 col-lg-6 event-form__item event-form__float">
+              <Field
+                name="address.city"
+                component={this.renderInput}
+                placeholder="City"
+                validate={[required]}
+              />
+            </div>
+          </div>
+
+          <div className="row clearfix">
+            <div className="col-xs-12 col-sml-12 col-md-12 col-lg-6 event-form__item event-form__float">
+              <Field
+                name="address.zipCode"
+                component={this.renderInput}
+                placeholder="zipCode"
+                validate={[required, isNumber]}
+              />
+            </div>
+
+            <div className="col-xs-12 col-sml-12 col-md-12 col-lg-6 event-form__item event-form__float">
+              <Field
+                name="address.state"
+                component={this.renderInput}
+                placeholder="State"
+                validate={[required]}
+              />
+            </div>
+          </div>
+
+          <div className="col-xs-12 col-sml-12 col-md-12 col-lg-6 event-form__center">
             <Field
-              name="userName"
+              name="address.place"
               component={this.renderInput}
-              placeholder="Name of user"
+              placeholder="Place of event"
               validate={[required]}
             />
           </div>
 
-          <div className="event-form__item event-form__float">
-            <Field
-              name="name"
-              component={this.renderInput}
-              placeholder="Name of event"
-              validate={[required]}
-            />
-          </div>
-        </div>
+          <div className="row clearfix">
+            <div className="col-xs-12 col-sml-12 col-md-12 col-lg-6 event-form__item event-form__float">
+              <Field
+                name="startDate"
+                component={this.renderInput}
+                placeholder="Start date of event"
+                validate={[required]}
+              />
+            </div>
 
-        <div className="clearfix">
-          <div className="event-form__item event-form__float">
-            <Field
-              name="address.street"
-              component={this.renderInput}
-              placeholder="Street"
-              validate={[required]}
-            />
-          </div>
-
-          <div className="event-form__item event-form__float">
-            <Field
-              name="address.city"
-              component={this.renderInput}
-              placeholder="City"
-              validate={[required]}
-            />
-          </div>
-        </div>
-
-        <div className="clearfix">
-          <div className="event-form__item event-form__float">
-            <Field
-              name="address.zipCode"
-              component={this.renderInput}
-              placeholder="zipCode"
-              validate={[required, isNumber]}
-            />
+            <div className="col-xs-12 col-sml-12 col-md-12 col-lg-6 event-form__item event-form__float">
+              <Field
+                name="endDate"
+                component={this.renderInput}
+                placeholder="End date of event"
+                validate={[required]}
+              />
+            </div>
           </div>
 
-          <div className="event-form__item event-form__float">
-            <Field
-              name="address.state"
-              component={this.renderInput}
-              placeholder="State"
-              validate={[required]}
-            />
+          <div className="row clearfix">
+            <div className="col-xs-12 col-sml-12 col-md-12 col-lg-6 event-form__item event-form__float">
+              {this.renderSelect('caunty', selectOptionsCounty)}
+            </div>
+            <div className="col-xs-12 col-sml-12 col-md-12 col-lg-6 event-form__item event-form__float">
+              {this.renderSelect('category', selectOptions)}
+            </div>
           </div>
-        </div>
 
-        <div className="event-form__center">
-          <Field
-            name="address.place"
-            component={this.renderInput}
-            placeholder="Place of event"
-            validate={[required]}
-          />
-        </div>
-
-        <div className="clearfix">
-          <div className="event-form__item event-form__float">
+          <div className="event-form__description">
             <Field
-              name="startDate"
-              component={this.renderInput}
-              placeholder="Start date of event"
+              name="description"
+              component={this.renderTextarea}
+              placeholder="Description of event"
               validate={[required]}
             />
           </div>
 
-          <div className="event-form__item event-form__float">
-            <Field
-              name="endDate"
-              component={this.renderInput}
-              placeholder="End date of event"
-              validate={[required]}
-            />
+          <div className="event-form-button">
+            <button type="submit" className="btn btn-primary event-form-button__left-btn">
+              Submit
+            </button>
+            <Link to="/" className="btn btn-danger">
+              Cancel
+            </Link>
           </div>
-        </div>
-
-        <div className="clearfix">
-          <div className="event-form__item event-form__float">
-            {this.renderSelect('caunty', selectOptionsCounty)}
-          </div>
-          <div className="event-form__item event-form__float">
-            {this.renderSelect('category', selectOptions)}
-          </div>
-        </div>
-
-        <div className="event-form__description">
-          <Field
-            name="description"
-            component={this.renderTextarea}
-            placeholder="Description of event"
-            validate={[required]}
-          />
-        </div>
-
-        <div className="event-form-button">
-          <button type="submit" className="btn btn-primary event-form-button__left-btn">
-            Submit
-          </button>
-          <Link to="/" className="btn btn-danger">
-            Cancel
-          </Link>
-        </div>
-      </form>
+        </form>
+      </div>
     );
   }
 }
