@@ -1,13 +1,11 @@
 @import '../../css/colors.scss';
 
 .user-tile {
-  width: 24%;
-  float: left;
   box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
   border: 1px solid $color-gray;
   border-top: none;
   &__image {
-    width: 21.5rem;
+    width: 100%;
   }
 }
 

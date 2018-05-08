@@ -1,11 +1,9 @@
 .user-tile {
-  width: 24%;
-  float: left;
   box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-top: none; }
   .user-tile__image {
-    width: 21.5rem; }
+    width: 100%; }
 
 .user-tile-box {
   padding: 1rem;

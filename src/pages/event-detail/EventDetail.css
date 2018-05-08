@@ -1,12 +1,13 @@
 .event-detail {
-  margin: 2rem; }
+  margin: 2rem;
+  align-items: flex-start; }
+  .event-detail__content-wrapper {
+    align-items: flex-start;
+    margin-bottom: 2rem; }
   .event-detail__content {
-    width: 43%;
-    float: left;
-    margin: 0 4rem 2rem;
     box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75); }
   .event-detail__image {
-    width: 38.6rem; }
+    width: 100%; }
   .event-detail__border {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-top: none;
