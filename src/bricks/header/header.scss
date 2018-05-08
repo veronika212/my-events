@@ -1,6 +1,10 @@
 @import '../../css/colors.scss';
 
 .header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  top: 0;
   text-align: center;
   padding: 4rem 3rem;
   background: $color-blue;
