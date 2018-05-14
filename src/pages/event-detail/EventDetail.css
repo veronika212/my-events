@@ -5,9 +5,8 @@
     align-items: flex-start;
     margin-bottom: 2rem; }
   .event-detail__content {
-    box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75); }
-  .event-detail__image {
-    width: 100%; }
+    box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
+    padding: 0; }
   .event-detail__border {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-top: none;

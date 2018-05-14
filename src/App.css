@@ -6,7 +6,7 @@
 html {
   font-size: 16px;
   position: relative;
-  top: 188px; }
+  top: 166px; }
 
 p {
   margin-bottom: 0; }
@@ -16,4 +16,4 @@ ul {
   margin-bottom: 0; }
 
 body {
-  max-width: 1500px; }
+  width: 100%; }
