@@ -4,9 +4,6 @@
   box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.75);
   border: 1px solid $color-gray;
   border-top: none;
-  &__image {
-    width: 100%;
-  }
   padding: 0;
 }
 
@@ -26,5 +23,23 @@
   }
   &__motto {
     overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 1398px) {
+  .user-tile-box {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1268px) {
+  .user-tile-box {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1165px) {
+  .user-tile-box__name {
+    padding-bottom: 0.5rem;
   }
 }

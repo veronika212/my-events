@@ -61,3 +61,30 @@
     padding-bottom: 1rem;
   }
 }
+
+@media (max-width: 1421px) {
+  .comments-title__image {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 1398px) {
+  .information .basic-info__title-event .basic-info__number-day .coments-title {
+    font-size: 1rem;
+  }
+  .button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1268px) {
+  .information .basic-info__title-event .basic-info__number-day .coments-title {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .event-detail__content {
+    margin-bottom: 2rem;
+  }
+}

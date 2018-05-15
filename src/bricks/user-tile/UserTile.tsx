@@ -6,9 +6,12 @@ import './user-tile.css';
 
 const UserTile = props => {
   return (
-    <div>
-      <img className="user-tile__image" src={props.user.image} alt="avatar" />
-
+    <div className="container-fluid">
+      <div>
+        <div className="row">
+          <img className="col-xl-3" src={props.user.image} alt="avatar" />
+        </div>
+      </div>
       <div className="clearfix user-tile-box">
         <div className="user-tile-box__name">
           <p>Name</p>

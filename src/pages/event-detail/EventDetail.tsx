@@ -51,9 +51,9 @@ class EventDetail extends Component<EventDetailProps> {
         <div className="event-detail">
           <div className="row event-detail__content-wrapper">
             <div className="d-none d-lg-block col-lg-3 user-tile">{this.renderUserTile()}</div>
-            <div className="col-sm-12 col-lg-6 event-detail__content">
+            <div className="col-sm-12 col-xl-6 event-detail__content">
               <img
-                className="col-lg-3 event-detail__image"
+                className="col-xl-6 event-detail__image"
                 src={eventDetail.image}
                 alt="pictures"
               />
@@ -115,10 +115,10 @@ class EventDetail extends Component<EventDetailProps> {
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 user-tile">{this.renderUserTile()}</div>
+            <div className="col-xl-3 user-tile">{this.renderUserTile()}</div>
           </div>
 
-          <div className="col-lg-12 description-box">
+          <div className="col-xl-12 description-box">
             <p className="description-box__title">Description event </p>
             <p>{eventDetail.description}</p>
           </div>
