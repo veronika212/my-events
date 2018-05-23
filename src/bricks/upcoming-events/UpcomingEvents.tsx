@@ -12,6 +12,7 @@ import './upcoming-evetns.css';
 interface UpcomingEventsProps {
   fetchEvents: (limit: number) => { type: string; limit: number };
   events: Event[];
+  className?: string;
 }
 
 class UpcomingEvents extends Component<UpcomingEventsProps> {
@@ -53,8 +54,9 @@ class UpcomingEvents extends Component<UpcomingEventsProps> {
   };
 
   render() {
+    const { className } = this.props;
     return (
-      <div className="upcoming">
+      <div className={`upcoming ${className}`}>
         <h4 className="upcoming-title">UPCOMING EVENTS</h4>
         <ul className="upcoming-list">{this.renderUpcomintEvent()}</ul>
       </div>

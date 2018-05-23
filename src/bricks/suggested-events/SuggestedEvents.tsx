@@ -10,6 +10,7 @@ import './suggested-events.css';
 interface SuggestedEventProps {
   fetchEvents: (limit: number) => { type: string; limit: number };
   events: Event[];
+  className?: string;
 }
 
 class SuggestedEvent extends Component<SuggestedEventProps> {
@@ -50,8 +51,9 @@ class SuggestedEvent extends Component<SuggestedEventProps> {
   };
 
   render() {
+    const { className } = this.props;
     return (
-      <div className="suggested">
+      <div className={`suggested ${className}`}>
         <h4 className="suggested-title">SUGGESTED</h4>
         <ul className="suggested-list">{this.renderSuggestedEvent()}</ul>
       </div>

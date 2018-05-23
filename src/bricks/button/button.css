@@ -5,3 +5,11 @@
   cursor: pointer; }
   .button:hover {
     background: #6b8c9c; }
+
+@media (max-width: 1324px) {
+  .button {
+    margin-bottom: 0.5rem; } }
+
+@media (max-width: 983px) {
+  .button {
+    font-size: 0.775rem; } }

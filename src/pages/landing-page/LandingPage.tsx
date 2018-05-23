@@ -10,8 +10,16 @@ class LandingPage extends Component {
     return (
       <div className="landing-page">
         <div className="landing-page__events-background">
-          <UpcomingEvents />
-          <SuggestedEvents />
+          <div className="container">
+            <div className="row no-gutters">
+              <div className="col-md-8 col-lg-4">
+                <UpcomingEvents />
+              </div>
+              <div className="col-md-8 col-lg-4">
+                <SuggestedEvents />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
