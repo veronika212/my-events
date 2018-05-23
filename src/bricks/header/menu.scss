@@ -14,3 +14,9 @@
     color: #192c47;
   }
 }
+
+@media (max-width: 493px) {
+  .menu {
+    display: block;
+  }
+}
