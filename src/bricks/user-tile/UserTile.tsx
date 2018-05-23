@@ -8,9 +8,7 @@ const UserTile = props => {
   return (
     <div className="container-fluid">
       <div>
-        <div className="row">
-          <img className="col-xl-3" src={props.user.image} alt="avatar" />
-        </div>
+        <img className="user-title-box__image col-xl-12" src={props.user.image} alt="avatar" />
       </div>
       <div className="clearfix user-tile-box">
         <div className="user-tile-box__name">

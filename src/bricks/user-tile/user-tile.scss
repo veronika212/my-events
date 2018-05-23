@@ -10,6 +10,10 @@
 .user-tile-box {
   padding: 1rem;
   font-size: 1.125rem;
+  &__image {
+    flex-direction: row;
+    justify-content: center;
+  }
   &__name {
     float: left;
     color: $color-dark-gray;
@@ -23,6 +27,12 @@
   }
   &__motto {
     overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 1460px) {
+  .user-tile-box__name {
+    padding-bottom: 0.5rem;
   }
 }
 
@@ -41,5 +51,9 @@
 @media (max-width: 1165px) {
   .user-tile-box__name {
     padding-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  .user-tile-box__info {
+    font-size: 1rem;
   }
 }

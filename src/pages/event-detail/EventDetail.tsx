@@ -50,7 +50,7 @@ class EventDetail extends Component<EventDetailProps> {
       <div className="container-fluid">
         <div className="event-detail">
           <div className="row event-detail__content-wrapper">
-            <div className="d-none d-lg-block col-lg-3 user-tile">{this.renderUserTile()}</div>
+            <div className="d-none d-xl-block col-lg-3 user-tile">{this.renderUserTile()}</div>
             <div className="col-sm-12 col-xl-6 event-detail__content">
               <img
                 className="col-xl-6 event-detail__image"

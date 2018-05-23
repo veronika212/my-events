@@ -7,6 +7,9 @@
 .user-tile-box {
   padding: 1rem;
   font-size: 1.125rem; }
+  .user-tile-box__image {
+    flex-direction: row;
+    justify-content: center; }
   .user-tile-box__name {
     float: left;
     color: #4b4f56;
@@ -19,6 +22,10 @@
   .user-tile-box__motto {
     overflow-wrap: break-word; }
 
+@media (max-width: 1460px) {
+  .user-tile-box__name {
+    padding-bottom: 0.5rem; } }
+
 @media (max-width: 1398px) {
   .user-tile-box {
     font-size: 1rem; } }
@@ -29,4 +36,7 @@
 
 @media (max-width: 1165px) {
   .user-tile-box__name {
-    padding-bottom: 0.5rem; } }
+    padding-bottom: 0.5rem;
+    font-size: 1rem; }
+  .user-tile-box__info {
+    font-size: 1rem; } }
